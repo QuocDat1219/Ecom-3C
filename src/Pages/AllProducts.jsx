@@ -2,16 +2,18 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import FilterData from "../Filter/Filters/FilterData";
 import { getData } from "../redux/DataReducer/action";
-import { Flex, Box, Spacer, Grid } from "@chakra-ui/react";
+import { Flex, Box, Spacer, Grid, Center, Text } from "@chakra-ui/react";
 import ProductDis from "../components/ProductsDisplay/ProductDis";
 import { useMediaQuery } from "@chakra-ui/react";
 import Loading from "../components/Loading/Loading";
 import { useLocation, useSearchParams } from "react-router-dom";
 import Navbar from "../components/Navbar/Navbar";
+import ListProducts from "./ListProducts";
 // import Paginate from "../components/Paginatation/Paginate";
 //import FilterChecked from "../Filter/Filters/FilterChecked";
 const AllProducts = () => {
   const dispatch = useDispatch();
+  const listProduct = useSelector((store) => store?.ListProductReducer?.listProduct);
   const products = useSelector((store) => store?.dataReducer?.products);
   const loading = useSelector((store) => store?.dataReducer?.isLoading);
   const [searchParams] = useSearchParams();
@@ -32,6 +34,7 @@ const AllProducts = () => {
           _order: sortBy,
         },
       };
+
       dispatch(getData(queryParams));
     }
   }, [dispatch, location.search, products?.length, searchParams]);
@@ -41,6 +44,13 @@ const AllProducts = () => {
   // const indexOfLastPost = currentPage * postPerPage;
   // const indexOfFirstPost = indexOfLastPost - postPerPage;
   // const filterPosts = products?.slice(indexOfFirstPost, indexOfLastPost);
+  // useEffect(() => {
+  //   console.log(listProducts)
+  //   products?.map((product) => {
+  //     console.log(product.id)
+  //   })
+  // }, [])
+
   return (
     <div className="AllProducts">
       <Navbar /> <br />
@@ -48,37 +58,28 @@ const AllProducts = () => {
         <Loading />
       ) : (
         // <>
-          <Flex flexDirection={isLargerThan ? "row" : "column"}>
-            <Box w={isLargerThan ? "15%" : "100%"}>
-              <FilterData />
-              {/* <FilterChecked/> */}
-            </Box>
-            <Spacer />
-            <Box width={isLargerThan ? "80%" : "100%"}>
-              <Grid
-                templateColumns={
-                  isLargerThan ? "repeat(3, 1fr)" : "repeat(2, 1fr)"
-                }
-                gap={"5px"}
-              >
-                {products?.length > 0 &&
-                  products?.map((item) => {
-                    return <ProductDis key={item.key} item={item} />;
-                  })}
-              </Grid>
-            </Box>
-          </Flex>
-          /* {totalPosts > postPerPage && (
-            <Paginate
-              currentPage={currentPage}
-              setCurrentPage={setCurrentPage}
-              totalPosts={totalPosts}
-              postPerPage={postPerPage}
-            />
-          )}
-        </> */
-      )}
-    </div>
+        <Flex justifyContent={"center"} flexDirection={isLargerThan ? "row" : "column"} padding={"0px 20px 0px 20px"} >
+
+          <Box w={isLargerThan ? "18%" : "100%"}>
+            <FilterData />
+            {/* <FilterChecked /> */}
+          </Box>
+          <Spacer />
+          {/* List Product */}
+          <ListProducts products={products} />
+        </Flex>
+        /* {totalPosts > postPerPage && (
+          <Paginate
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+            totalPosts={totalPosts}
+            postPerPage={postPerPage}
+          />
+        )}
+      </> */
+      )
+      }
+    </div >
   );
 };
 

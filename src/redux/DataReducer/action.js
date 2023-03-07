@@ -5,12 +5,17 @@ const getData = (params) => (dispatch) => {
   return axios
     .get(`${process.env.REACT_APP_BASE_API}/allproducts`, params)
     .then((res) => {
+      console.log(res)
       dispatch({ type: types.GET_DATA_S, payload: res.data });
     })
     .then((err) => {
       dispatch({ type: types.GET_DATA_F });
     });
 };
+
+
+
+
 const updateData = (id, payload) => (dispatch) => {
   dispatch({ type: types.UPDATE_DATA_R });
   return axios
