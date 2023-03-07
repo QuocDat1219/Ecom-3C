@@ -11,17 +11,20 @@ import Navbar from "../components/Navbar/Navbar";
 import { Truncate } from "@chakra-ui/react";
 const ListProducts = ({ products }) => {
     const [isLargerThan] = useMediaQuery("(min-width: 768px)");
+    const [isMedia] = useMediaQuery("(min-width: 768px)");
     const lProducts = useSelector((store) => store?.ListProductReducer?.listProduct)
     const dt = products.filter(product => product.idProductList == "dm3")
     console.log(dt)
     console.log(lProducts)
     return <>
-        <Box width={isLargerThan ? "80%" : "80%"}  >
+        <Box width={isLargerThan ? "80%" : "100%"}  >
             {
                 lProducts?.map(listProduct =>
                     <>
-                        <Box marginBottom={10}>
-                            <Box bgColor={"#eee"} width={"100%"} minW={"490px"} h={"44px"} alignItems={"center"} display={"flex"} justifyContent={"flex-start"} marginBottom={"38px"} className="ec_title"
+                        <Box
+                            p={isLargerThan ? 0 : 2}
+                            marginBottom={10}>
+                            <Box bgColor={"#eee"} width={"100%"} h={"44px"} alignItems={"center"} display={"flex"} justifyContent={"flex-start"} marginBottom={"30px"} className="ec_title"
                                 position={"relative"}
                                 _after={{
                                     content: `" "`,
@@ -34,10 +37,11 @@ const ListProducts = ({ products }) => {
                                 }}
                             >
                                 <Text
-                                    width={"100%"}
-                                    overflow={"hidden"}
+                                    isTruncated
                                     textOverflow={"ellipsis"}
                                     whiteSpace={"nowrap"}
+                                    overflow={"hidden"}
+                                    width={"100%"}
                                     fontSize={"18px"}
                                     color={"#333"}
                                     fontStyle={"bold"}
@@ -61,14 +65,24 @@ const ListProducts = ({ products }) => {
                                     }}
 
                                 >
-                                    {listProduct?.name}
+                                    <Text
+
+                                        isTruncated
+                                        textOverflow={"ellipsis"}
+                                        whiteSpace={"nowrap"}
+                                        overflow={"hidden"}
+                                        maxW={"800px"}
+
+                                    >
+                                        {listProduct?.name}
+                                    </Text>
                                 </Text>
                             </Box>
                             <Grid
                                 templateColumns={
-                                    isLargerThan ? "repeat(5, 1fr)" : "repeat(2, 1fr)"
+                                    isLargerThan ? "repeat(5, 1fr)" : "repeat(1, 1fr)"
                                 }
-                                gap={"20px"}
+                                gap={"5px"}
                             >
                                 {
                                     products.filter(item => item.idProductList == listProduct.id).slice(0, 10)?.map((item) => {

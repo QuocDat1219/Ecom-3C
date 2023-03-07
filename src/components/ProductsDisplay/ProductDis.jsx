@@ -1,4 +1,4 @@
-import { Box, Flex, HStack, Icon, Image, Text, background } from "@chakra-ui/react";
+import { Box, Flex, HStack, Icon, Image, Text, background, useMediaQuery } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 // import { AiOutlineStar } from "react-icons/ai";
@@ -6,6 +6,8 @@ import { StarIcon } from "@chakra-ui/icons";
 import "./productDis.css"
 const ProductDis = ({ item }) => {
   const navigate = useNavigate();
+  const [isLargerThan] = useMediaQuery("(min-width: 768px)");
+
   const { id, name, price, guarantee, images } = item;
   // const [img, setImg] = useState(images[0]);
   const handleDes = () => {
@@ -37,7 +39,7 @@ const ProductDis = ({ item }) => {
         // onMouseLeave={OriginalImage} 
         onClick={handleDes}
       >
-        <Box overflow={"hidden"} position={"relative"} objectFit={"cover"} w={"192px"} h={"100px"} justifyContent={"center"} display={"flex"} marginBottom={"25px"}>
+        <Box overflow={"hidden"} position={"relative"} objectFit={"cover"} w={"192px"} h={isLargerThan ? "100px" : "200px"} justifyContent={"center"} display={"flex"} marginBottom={"25px"}>
           <Image className="imageAnimation" w={"auto"} h={"auto"} objectFit={"cover"} src={images} alt={name} />
         </Box>
         <Box

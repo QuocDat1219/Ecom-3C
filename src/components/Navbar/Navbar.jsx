@@ -57,6 +57,7 @@ const Navbar = () => {
     <div className="Navbar">
       <Flex
         h={"9vh"}
+        w={"100%"}
         display="flex"
         justifyContent={"right"}
         gap="10px"

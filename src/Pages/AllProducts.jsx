@@ -52,20 +52,15 @@ const AllProducts = () => {
   // }, [])
 
   return (
-    <div className="AllProducts">
+    <Box  >
       <Navbar /> <br />
       {loading ? (
         <Loading />
       ) : (
         // <>
-        <Flex justifyContent={"center"} flexDirection={isLargerThan ? "row" : "column"} padding={"0px 20px 0px 20px"} >
-
-          <Box w={isLargerThan ? "18%" : "100%"}>
-            <FilterData />
-            {/* <FilterChecked /> */}
-          </Box>
-          <Spacer />
-          {/* List Product */}
+        <Flex justifyContent={"center"} gap={20} padding={"5px"} flexDirection={isLargerThan ? "row" : "column"}  >
+          <FilterData listProduct={listProduct} />
+          {/* <FilterChecked /> */}
           <ListProducts products={products} />
         </Flex>
         /* {totalPosts > postPerPage && (
@@ -79,7 +74,7 @@ const AllProducts = () => {
       </> */
       )
       }
-    </div >
+    </Box >
   );
 };
 

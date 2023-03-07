@@ -11,11 +11,12 @@ import {
   Flex,
   FormLabel,
   Radio,
+  Text,
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { FaFilter } from "react-icons/fa";
 import { useSearchParams } from "react-router-dom";
-const FilterData = () => {
+const FilterData = ({ listProduct }) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const initialCategoryParams = searchParams.getAll("category");
   const initialGenderParams = searchParams.getAll("gender");
@@ -88,7 +89,7 @@ const FilterData = () => {
     }
   }, [theColorType, setSearchParams, theGender, theCategory, theSizes, sortBy]);
   return (
-    <div>
+    <Box minW={"200px"} >
       <Heading>
         <Flex>
           <FaFilter />
@@ -105,136 +106,39 @@ const FilterData = () => {
               <AccordionIcon />
             </AccordionButton>
           </h2>
-          <AccordionPanel pb={4}>
+          <AccordionPanel pb={4} >
             <Stack spacing={5} direction="column">
-              <Checkbox
-                value="clothes"
-                type="checkbox"
-                onChange={handleCategoryChange}
-                defaultChecked={theCategory.includes("clothes")}
-              >
-                Clothes
-              </Checkbox>
-              <Checkbox
-                value="shoes"
-                type="checkbox"
-                onChange={handleCategoryChange}
-                defaultChecked={theCategory.includes("shoes")}
-              >
-                Shoes
-              </Checkbox>
-            </Stack>
-          </AccordionPanel>
-        </AccordionItem>
-        <AccordionItem>
-          <h2>
-            <AccordionButton>
-              <Box flex="1" textAlign="left">
-                Color
-              </Box>
-              <AccordionIcon />
-            </AccordionButton>
-          </h2>
-          <AccordionPanel pb={4}>
-            <Stack spacing={5} direction="column">
-              <Checkbox
-                value="black"
-                type="checkbox"
-                onChange={handleColorTypeChange}
-                defaultChecked={theColorType.includes("black")}
-              >
-                Black
-              </Checkbox>
-              <Checkbox
-                value="red"
-                type="checkbox"
-                onChange={handleColorTypeChange}
-                defaultChecked={theColorType.includes("red")}
-              >
-                Red
-              </Checkbox>
-              <Checkbox
-                value="white"
-                type="checkbox"
-                onChange={handleColorTypeChange}
-                defaultChecked={theColorType.includes("white")}
-              >
-                White
-              </Checkbox>
-              <Checkbox
-                value="blue"
-                type="checkbox"
-                onChange={handleColorTypeChange}
-                defaultChecked={theColorType.includes("blue")}
-              >
-                blue
-              </Checkbox>
-            </Stack>
-          </AccordionPanel>
-        </AccordionItem>
-        <AccordionItem>
-          <h2>
-            <AccordionButton>
-              <Box flex="1" textAlign="left">
-                Gender
-              </Box>
-              <AccordionIcon />
-            </AccordionButton>
-          </h2>
-          <AccordionPanel pb={4}>
-            <Stack spacing={5} direction="column">
-              <Checkbox
-                value="MEN"
-                type="checkbox"
-                onChange={handleGenderChange}
-                defaultChecked={theGender.includes("MEN")}
-              >
-                Men
-              </Checkbox>
-              <Checkbox
-                value="WOMEN"
-                type="checkbox"
-                onChange={handleGenderChange}
-                defaultChecked={theGender.includes("WOMEN")}
-              >
-                Women
-              </Checkbox>
-            </Stack>
-          </AccordionPanel>
-        </AccordionItem>
+              {
+                listProduct?.map(list =>
+                  <>
+                    <Checkbox
+                      value="clothes"
+                      type="checkbox"
+                      onChange={handleCategoryChange}
+                      defaultChecked={theCategory.includes("clothes")}
+                    >
+                      <Text
+                        isTruncated
+                        maxW={"200px"}
+                        textOverflow={"ellipsis"}
+                        whiteSpace={"nowrap"}
+                        overflow={"hidden"}
+                      >
+                        {
 
-        <AccordionItem>
-          <h2>
-            <AccordionButton>
-              <Box flex="1" textAlign="left">
-                Rating
-              </Box>
-              <AccordionIcon />
-            </AccordionButton>
-          </h2>
-          <AccordionPanel pb={4}>
-            <Stack spacing={5} direction="column" onChange={handleSortBy}>
-              <Flex alignItems={"center"} justifyContent={"space-between"}>
-                <FormLabel>Ascending</FormLabel>
-                <Radio
-                  type="radio"
-                  value="ASC"
-                  defaultChecked={sortBy === "ASC"}
-                />
-              </Flex>
-              <Flex alignItems={"center"} justifyContent={"space-between"}>
-                <FormLabel>Descending</FormLabel>
-                <Radio
-                  type="radio"
-                  value="DESC"
-                  defaultChecked={sortBy === "DESC"}
-                />
-              </Flex>
+                          list?.name
+                        }
+                      </Text>
+                    </Checkbox>
+                  </>
+                )
+              }
+
             </Stack>
           </AccordionPanel>
         </AccordionItem>
       </Accordion>
-    </div>
+    </Box>
   );
 };
 
