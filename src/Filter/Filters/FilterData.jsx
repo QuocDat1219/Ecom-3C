@@ -16,6 +16,7 @@ import {
 import { useEffect, useState } from "react";
 import { FaFilter } from "react-icons/fa";
 import { useSearchParams } from "react-router-dom";
+import { bgColorPr, fsCard, fsCardTitle, textColor } from "../../style.golbal";
 const FilterData = ({ listProduct }) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const initialCategoryParams = searchParams.getAll("category");
@@ -89,19 +90,19 @@ const FilterData = ({ listProduct }) => {
     }
   }, [theColorType, setSearchParams, theGender, theCategory, theSizes, sortBy]);
   return (
-    <Box minW={"200px"} >
+    <Box minW={"260px"}  >
       <Heading>
-        <Flex>
+        <Flex gap={2} fontSize={fsCard}  color={textColor} fontWeight={"bold"} marginBottom={2}  >
           <FaFilter />
-          Filter
+          Bộ lọc
         </Flex>
       </Heading>
       <Accordion allowMultiple>
         <AccordionItem>
           <h2>
             <AccordionButton>
-              <Box flex="1" textAlign="left">
-                Category
+              <Box flex="1" fontSize={fsCard} textAlign="left">
+                Danh mục
               </Box>
               <AccordionIcon />
             </AccordionButton>
@@ -123,6 +124,8 @@ const FilterData = ({ listProduct }) => {
                         textOverflow={"ellipsis"}
                         whiteSpace={"nowrap"}
                         overflow={"hidden"}
+                        fontSize={fsCard}
+                        textTransform={"lowercase"}
                       >
                         {
 

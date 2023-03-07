@@ -39,7 +39,7 @@ export default function SideMenu({ colorMode }) {
               </Link>
               <Link to="/allproducts">
                 <Text my="4" mx="2">
-                  AllProducts
+                  Trang chủ
                 </Text>
               </Link>
               <Link to="/men">

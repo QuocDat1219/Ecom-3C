@@ -9,9 +9,9 @@ import Loading from "../components/Loading/Loading";
 import { useLocation, useSearchParams } from "react-router-dom";
 import Navbar from "../components/Navbar/Navbar";
 import { Truncate } from "@chakra-ui/react";
+import { bgColorPr, textColor } from "../style.golbal";
 const ListProducts = ({ products }) => {
     const [isLargerThan] = useMediaQuery("(min-width: 768px)");
-    const [isMedia] = useMediaQuery("(min-width: 768px)");
     const lProducts = useSelector((store) => store?.ListProductReducer?.listProduct)
     const dt = products.filter(product => product.idProductList == "dm3")
     console.log(dt)
@@ -22,9 +22,22 @@ const ListProducts = ({ products }) => {
                 lProducts?.map(listProduct =>
                     <>
                         <Box
+                            display={"flex"}
+                            justifyContent={"center"}
+                            flexDirection={"column"}
                             p={isLargerThan ? 0 : 2}
                             marginBottom={10}>
-                            <Box bgColor={"#eee"} width={"100%"} h={"44px"} alignItems={"center"} display={"flex"} justifyContent={"flex-start"} marginBottom={"30px"} className="ec_title"
+                            <Box
+                                borderRadius={4}
+                                overflow={"hidden"}
+                                bgColor={bgColorPr}
+                                width={"100%"}
+                                h={"44px"}
+                                alignItems={"center"} 
+                                display={"flex"}
+                                justifyContent={"flex-start"}
+                                marginBottom={"30px"}
+                                className="ec_title"
                                 position={"relative"}
                                 _after={{
                                     content: `" "`,
@@ -33,7 +46,7 @@ const ListProducts = ({ products }) => {
                                     top: "0",
                                     position: "absolute",
                                     zIndex: 1,
-                                    borderTop: "3px solid red !important",
+                                    borderTop: "3px solid #ed1b24 !important",
                                 }}
                             >
                                 <Text
@@ -43,7 +56,7 @@ const ListProducts = ({ products }) => {
                                     overflow={"hidden"}
                                     width={"100%"}
                                     fontSize={"18px"}
-                                    color={"#333"}
+                                    color={textColor}
                                     fontStyle={"bold"}
                                     paddingLeft={"80px"}
                                     alignItems={"center"}
@@ -52,7 +65,7 @@ const ListProducts = ({ products }) => {
                                     _after={{
                                         content: `" "`,
                                         w: "70px",
-                                        h: "40px",
+                                        h: "100%",
                                         alignItems: "center",
                                         border: "none !important",
                                         position: "absolute",
@@ -82,10 +95,10 @@ const ListProducts = ({ products }) => {
                                 templateColumns={
                                     isLargerThan ? "repeat(5, 1fr)" : "repeat(1, 1fr)"
                                 }
-                                gap={"5px"}
+                                gap={8}
                             >
                                 {
-                                    products.filter(item => item.idProductList == listProduct.id).slice(0, 10)?.map((item) => {
+                                    products?.filter(item => item.idProductList == listProduct.id).slice(0, 10)?.map((item) => {
                                         return <ProductDis key={item.id} item={item} />;
                                     })
                                 }
