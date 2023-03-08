@@ -1,8 +1,16 @@
-import { Box, Image, Text } from "@chakra-ui/react";
+import { Box, Flex, Image, Text } from "@chakra-ui/react";
 import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { borderColor } from "../../style.golbal";
+import {
+  bderRCard,
+  borderColor,
+  colorHr,
+  fontWgolbal,
+  fsCard,
+  fsCardTitle,
+  priceColor,
+} from "../../style.golbal";
 
 export const HomeDis = ({ item }) => {
   const navigate = useNavigate();
@@ -29,6 +37,7 @@ export const HomeDis = ({ item }) => {
     >
       <Box
         border={borderColor}
+        borderRadius={bderRCard}
         display={"flex"}
         flexDirection={"column"}
         justifyContent={"space-between"}
@@ -36,24 +45,46 @@ export const HomeDis = ({ item }) => {
         m={"auto"}
         p={5}
         // width={["95%", "80%", "80%", "80%"]} Default
-        width={["95%", "50%", "50%", "80%"]} //Custom testing
+        width={["95%", "95%", "80%", "80%"]} //Custom testing
         minHeight={"220px"}
         onClick={() => navigate("/allproducts")}
       >
         <Box overflow={"hidden"} position={"relative"}>
-          <Image className="imageAnimation" src={images} alt={name} />
+          <Image
+            h={[100, 100, 100, 100]}
+            w={[100, 100, 100, 100]}
+            objectFit={"cover"}
+            className="imageAnimation"
+            src={images}
+            alt={name}
+          />
         </Box>
         <Box>
           <Text
             textOverflow={"ellipsis"}
             whiteSpace={"nowrap"}
             overflow={"hidden"}
-            fontWeight={fname}
-            maxW={200}
+            maxW={[100, 100, 100, 220]}
+            fontWeight={"bold"}
+            fontSize={"14px"}
+            p={3}
           >
             {name}
           </Text>
-          <Text>Giá : {price ? price : "..."}</Text>
+          <Box w="100%" h="1px" margin={"10px"} bgColor={colorHr} />
+
+          <Text
+            display={"flex"}
+            justifyContent={"center"}
+            textAlign={"center"}
+            fontWeight={"semibold"}
+            fontSize={fsCard}
+          >
+            Giá :{" "}
+            <Text ml={1} color={priceColor}>
+              {price ? price : "đang cập nhật"}
+            </Text>
+          </Text>
           {/* <Text>
           {color} || {gender}
         </Text> */}
