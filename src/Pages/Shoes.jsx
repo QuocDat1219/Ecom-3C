@@ -13,15 +13,12 @@ const AllshoesD = () => {
   const dispatch = useDispatch();
   const shoesD = useSelector((store) => store.pagesReducer.shoesD);
   const loading = useSelector((store) => store.pagesReducer.isLoading);
-
   const [isLargerThan] = useMediaQuery("(min-width: 768px)");
-
   const [searchParams] = useSearchParams();
   const location = useLocation();
   useEffect(() => {
     if (location || shoesD?.length === 0) {
       const sortBy = searchParams.get("sortBy");
-
       const queryParams = {
         params: {
           category: searchParams.getAll("category"),

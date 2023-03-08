@@ -4,9 +4,18 @@ import { useDispatch, useSelector } from "react-redux";
 import Slider from "react-slick";
 import { getMensData } from "../../redux/PagesReducer/action";
 import { HomeDis } from "../HomeDisplay/HomeDisplay";
+import { fsCardTitle, textColor, titleColor } from "../../style.golbal";
 const Trending = () => {
   const dispatch = useDispatch();
   const mensD = useSelector((store) => store.pagesReducer.mensD);
+
+  /**
+   * Test data
+   */
+
+  /**
+   * End test data
+   * */
 
   useEffect(() => {
     if (mensD?.length === 0) {
@@ -18,7 +27,7 @@ const Trending = () => {
     dots: true,
     infinite: false,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: 5,
     slidesToScroll: 4,
     initialSlide: 0,
     responsive: [
@@ -50,8 +59,19 @@ const Trending = () => {
   };
   return (
     <div>
-      <Box border="1px solid beige">
-        <Heading align={"left"}> TOP PICS FOR YOU</Heading>
+      <Box>
+        <Heading
+          // m={3}
+          lineHeight={"50px"}
+          align={"center"}
+          fontSize={"25px"}
+          color={titleColor}
+          fontStyle={"bold"}
+          fontWeight={400}
+        >
+          {" "}
+          SẢN PHẨM MỚI{" "}
+        </Heading>
         <Slider {...settings}>
           {mensD?.length > 0 &&
             mensD.map((item) => {

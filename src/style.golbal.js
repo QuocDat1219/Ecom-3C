@@ -21,6 +21,10 @@ export const textColor = "#070707"
 export const priceColor = "#ff0000"
 export const fontWgolbal = "semibold"
 export const colorHr = "#eee"
+export const titleColor = "#333333"
+
+export const bderRCard = 5
+
 
 
 /** Font size Card */

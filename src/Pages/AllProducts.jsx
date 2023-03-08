@@ -2,23 +2,35 @@ import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import FilterData from "../Filter/Filters/FilterData";
 import { getData } from "../redux/DataReducer/action";
-import { Flex, Box, Spacer, Grid, Center, Text, Button } from "@chakra-ui/react";
+import {
+  Flex,
+  Box,
+  Spacer,
+  Grid,
+  Center,
+  Text,
+  Button,
+} from "@chakra-ui/react";
 import ProductDis from "../components/ProductsDisplay/ProductDis";
 import { useMediaQuery } from "@chakra-ui/react";
 import Loading from "../components/Loading/Loading";
 import { useLocation, useSearchParams } from "react-router-dom";
 import Navbar from "../components/Navbar/Navbar";
 import ListProducts from "./ListProducts";
+import Trending from "../components/Trends/Trending";
+import Carousel from "../components/Carousel/Carousel";
 // import Paginate from "../components/Paginatation/Paginate";
 //import FilterChecked from "../Filter/Filters/FilterChecked";
 const AllProducts = () => {
   const dispatch = useDispatch();
-  const listProduct = useSelector((store) => store?.ListProductReducer?.listProduct);
+  const listProduct = useSelector(
+    (store) => store?.ListProductReducer?.listProduct
+  );
   const products = useSelector((store) => store?.dataReducer?.products);
   const loading = useSelector((store) => store?.dataReducer?.isLoading);
   const [searchParams] = useSearchParams();
   // const [currentPage, setCurrentPage] = useState(1);
-  const [openFilterData, setOpenFilterData] = useState(false)
+  const [openFilterData, setOpenFilterData] = useState(false);
   const location = useLocation();
   const [isLargerThan] = useMediaQuery("(min-width: 768px)");
   useEffect(() => {
@@ -43,7 +55,8 @@ const AllProducts = () => {
   // handlerOpenFilter
   const handlerOpenFilter = () => {
     setOpenFilterData(!openFilterData);
-  }
+  };
+  // End handlerOpenFilter
 
   // const postPerPage = 9;
   // const totalPosts = products?.length;
@@ -58,14 +71,24 @@ const AllProducts = () => {
   // }, [])
 
   return (
-    <Box  >
+    <Box>
       <Navbar /> <br />
+      <Box w="80%" m="auto">
+        <Carousel />
+        <Trending />
+      </Box>
       {loading ? (
         <Loading />
       ) : (
         // <>
-        <Flex justifyContent={"center"} alignItems={"center"} gap={20} padding={"5px"} flexDirection={isLargerThan ? "row" : "column"}  >
 
+        <Flex
+          justifyContent={"center"}
+          alignItems={"center"}
+          gap={20}
+          padding={"5px"}
+          flexDirection={isLargerThan ? "row" : "column"}
+        >
           {/* <  FilterData listProduct={listProduct} /> */}
           {/* <FilterChecked /> */}
           <ListProducts products={products} />
@@ -79,9 +102,8 @@ const AllProducts = () => {
           />
         )}
       </> */
-      )
-      }
-    </Box >
+      )}
+    </Box>
   );
 };
 
