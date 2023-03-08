@@ -31,16 +31,15 @@ const ListProducts = ({ products }) => {
               marginBottom={10}
             >
               <Box
+                className="body"
                 borderRadius={4}
                 overflow={"hidden"}
-                bgColor={bgColorPr}
                 width={"100%"}
                 h={"44px"}
                 alignItems={"center"}
                 display={"flex"}
                 justifyContent={"flex-start"}
                 marginBottom={"30px"}
-                className="ec_title"
                 position={"relative"}
                 _after={{
                   content: `" "`,
