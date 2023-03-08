@@ -10,6 +10,11 @@ import {
   fsCard,
   fsCardTitle,
   priceColor,
+  rspImageH,
+  rspImageSlH,
+  rspImageSlW,
+  rspImageW,
+  textLongMaxWidthSl,
 } from "../../style.golbal";
 
 export const HomeDis = ({ item }) => {
@@ -45,14 +50,14 @@ export const HomeDis = ({ item }) => {
         m={"auto"}
         p={5}
         // width={["95%", "80%", "80%", "80%"]} Default
-        width={["95%", "95%", "80%", "80%"]} //Custom testing
-        minHeight={"220px"}
+        width={rspImageSlW} //Custom testing
+        minHeight={rspImageSlH}
         onClick={() => navigate("/allproducts")}
       >
         <Box overflow={"hidden"} position={"relative"}>
           <Image
-            h={[100, 100, 100, 100]}
-            w={[100, 100, 100, 100]}
+            w={"auto"}
+            h={"auto"}
             objectFit={"cover"}
             className="imageAnimation"
             src={images}
@@ -64,7 +69,7 @@ export const HomeDis = ({ item }) => {
             textOverflow={"ellipsis"}
             whiteSpace={"nowrap"}
             overflow={"hidden"}
-            maxW={[100, 100, 100, 220]}
+            maxW={textLongMaxWidthSl}
             fontWeight={"bold"}
             fontSize={"14px"}
             p={3}

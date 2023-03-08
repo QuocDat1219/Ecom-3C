@@ -19,6 +19,8 @@ import {
   fsCard,
   fsCardTitle,
   priceColor,
+  rspImageH,
+  rspImageW,
   textColor,
 } from "../../style.golbal";
 const ProductDis = ({ item }) => {
@@ -57,8 +59,8 @@ const ProductDis = ({ item }) => {
           overflow={"hidden"}
           position={"relative"}
           objectFit={"cover"}
-          w={"192px"}
-          h={isLargerThan ? "100px" : "200px"}
+          w={rspImageW}
+          h={rspImageH}
           justifyContent={"center"}
           display={"flex"}
           marginBottom={"25px"}

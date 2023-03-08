@@ -9,14 +9,12 @@ import Loading from "../components/Loading/Loading";
 import { useLocation, useSearchParams } from "react-router-dom";
 import Navbar from "../components/Navbar/Navbar";
 import { Truncate } from "@chakra-ui/react";
-import { bgColorPr, textColor } from "../style.golbal";
+import { bgColorPr, columnsCard, textColor } from "../style.golbal";
 const ListProducts = ({ products }) => {
   const [isLargerThan] = useMediaQuery("(min-width: 768px)");
   const lProducts = useSelector(
     (store) => store?.ListProductReducer?.listProduct
   );
-  const dt = products.filter((product) => product.idProductList == "dm3");
-  console.log(dt);
   console.log(lProducts);
   return (
     <>
@@ -58,7 +56,7 @@ const ListProducts = ({ products }) => {
                   whiteSpace={"nowrap"}
                   overflow={"hidden"}
                   width={"100%"}
-                  fontSize={"18px"}
+                  fontSize={["13px", "13px", "13px", "18px"]}
                   color={textColor}
                   fontStyle={"bold"}
                   paddingLeft={"80px"}
@@ -91,12 +89,7 @@ const ListProducts = ({ products }) => {
                   </Text>
                 </Text>
               </Box>
-              <Grid
-                templateColumns={
-                  isLargerThan ? "repeat(5, 1fr)" : "repeat(1, 1fr)"
-                }
-                gap={8}
-              >
+              <Grid templateColumns={columnsCard} gap={8}>
                 {products
                   ?.filter((item) => item.idProductList == listProduct.id)
                   .slice(0, 10)

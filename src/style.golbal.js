@@ -57,6 +57,29 @@ export const longText = {
 export const fsMobile = "12px"
 
 
+/** Response columnsCard */
+export const columnsCard = [
+    "repeat(1, 1fr)",
+    "repeat(2, 1fr)",
+    "repeat(2, 1fr)",
+    "repeat(4, 1fr)",
+    "repeat(5, 1fr)"
+]
+
+
+/**Response Image */
+export const rspImageH = ["200px", "200px", "200px", "150px"]
+export const rspImageW = ["200px", "200px", "200px", "150px"]
+
+/**Response Image Slider */
+export const rspImageSlH = ["200px", "200px", "200px", "250px"]
+export const rspImageSlW = ["200px", "200px", "200px", "250px"]
+
+export const textLongMaxWidthSl = [100, 100, 100, 100, 200]
+
+
+export const textLongMaxWidth = [200]
+
 
 export const settings = {
     dots: false,
@@ -66,6 +89,15 @@ export const settings = {
     slidesToScroll: 4,
     initialSlide: 0,
     responsive: [
+        {
+            breakpoint: 1600,
+            settings: {
+                slidesToShow: 4,
+                slidesToScroll: 4,
+                infinite: false,
+                dots: false,
+            },
+        },
         {
             breakpoint: 1024,
             settings: {

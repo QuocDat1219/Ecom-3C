@@ -35,8 +35,9 @@ export default function Carousel() {
   const cards = [
     {
       id: 1000,
-      title: "Shopping! Gappy ji is Now Happy ji",
-      text: "Here are Men's, Women's, Clothes and Shoes Collection, where you can buy Shoes and clothes with great prices",
+      title:
+        "CHUYÊN SỈ CÁC MẶT HÀNG GIA DỤNG-ĐIỆN TỬ-KHUYẾN MÃI- HÀNG XU HƯỚNG",
+      text: "ᴆɪ̣ᴀ ᴄʜɪ̉  :211/31 ᴍɪɴʜ ᴘʜᴜ̣ɴɢ , ᴘ9, ǫ6  ->Maps chỉ đường<-",
       image:
         "https://png.pngtree.com/thumb_back/fw800/background/20201010/pngtree-black-friday-sale-background-design-template-banner-discount-vector-poster-business-image_407567.jpg",
     },
@@ -92,6 +93,7 @@ export default function Carousel() {
         {cards.map((card) => (
           <Box
             key={card.id}
+            // height={["3xl", "4xl", "5xl", "6xl"]}
             height={"6xl"}
             color="whitesmoke"
             position="relative"
@@ -103,6 +105,8 @@ export default function Carousel() {
           >
             {/* This is the block if we need to change, to customize the caption */}
             <Container
+              display={"flex"}
+              justifyContent={"center"}
               size="container.lg"
               height="600px"
               m="auto"
@@ -116,14 +120,14 @@ export default function Carousel() {
                 top="50%"
                 transform="translate(0, -50%)"
               >
-                <Heading fontSize={{ base: "2xl", md: "4xl", lg: "5xl" }}>
+                <Heading fontSize={{ base: "1xl", md: "3xl", lg: "4xl" }}>
                   {card.title}
                 </Heading>
                 <Text fontSize={["sm", "md", "lg", "xl"]} color="">
                   {card.text}
                 </Text>
                 <Flex gap={isLargerThan ? "2rem" : "1rem"} justify={"center"}>
-                  <Button
+                  {/* <Button
                     fontSize={["xs", "sm", "md", "lg", "xl"]}
                     bg="black"
                     color="whitesmoke"
@@ -132,10 +136,12 @@ export default function Carousel() {
                       background: "none",
                       color: "blue",
                     }}
-                  >
-                    <Link to="/men">MENS SHOP </Link>
-                  </Button>
-                  <Button
+                  > */}
+                  <Link to="/men">
+                    Zalo chốt đơn : 0907618986-0933770888-0903884900-0934456252
+                  </Link>
+                  {/* </Button> */}
+                  {/* <Button
                     fontSize={["10px", "sm", "md", "lg"]}
                     bg="black"
                     color="whitesmoke"
@@ -144,10 +150,13 @@ export default function Carousel() {
                       background: "none",
                       color: "blue",
                     }}
-                  >
-                    <Link to="/women">WOMENS SHOP </Link>
-                  </Button>
-                  <Button
+                  > */}
+                  <Link to="/women">
+                    LH :0933456252 - MR Trường (Liên hệ khi bạn có thắc mắc cần
+                    giải đáp về hang hóa){" "}
+                  </Link>
+                  {/* </Button> */}
+                  {/* <Button
                     fontSize={["10px", "sm", "md", "lg"]}
                     bg="black"
                     color="whitesmoke"
@@ -156,9 +165,9 @@ export default function Carousel() {
                       background: "none",
                       color: "blue",
                     }}
-                  >
-                    <Link to="/shoes">SPORTS KIT </Link>
-                  </Button>
+                  > */}
+                  <Link to="/shoes">Bảo hành sản phẩm sau 13h30 T2-T7 </Link>
+                  {/* </Button> */}
                 </Flex>
               </Stack>
             </Container>

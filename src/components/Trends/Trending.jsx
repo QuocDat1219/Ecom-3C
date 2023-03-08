@@ -12,7 +12,9 @@ import {
 } from "../../style.golbal";
 const Trending = () => {
   const dispatch = useDispatch();
-  const mensD = useSelector((store) => store.pagesReducer.mensD);
+  // const mensD = useSelector((store) => store.pagesReducer.mensD);
+  const mensD = useSelector((store) => store?.dataReducer?.products);
+  console.log(mensD);
   /**
    * Test data
    */
