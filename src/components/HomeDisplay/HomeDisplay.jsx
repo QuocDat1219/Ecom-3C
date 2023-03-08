@@ -72,6 +72,7 @@ export const HomeDis = ({ item }) => {
             maxW={textLongMaxWidthSl}
             fontWeight={"bold"}
             fontSize={"14px"}
+            textTransform={"uppercase"}
             p={3}
           >
             {name}

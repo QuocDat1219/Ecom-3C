@@ -118,7 +118,7 @@ const Navbar = () => {
                 AllProducts
               </Text>
             </NavLink>
-            <NavLink
+            {/* <NavLink
               style={({ isActive }) => (isActive ? activeStyle : baseStyle)}
               to="/men"
             >
@@ -129,8 +129,8 @@ const Navbar = () => {
               >
                 Men
               </Text>
-            </NavLink>
-            <NavLink
+            </NavLink> */}
+            {/* <NavLink
               style={({ isActive }) => (isActive ? activeStyle : baseStyle)}
               to="/women"
             >
@@ -141,7 +141,7 @@ const Navbar = () => {
               >
                 Women
               </Text>
-            </NavLink>
+            </NavLink> */}
             <NavLink
               style={({ isActive }) => (isActive ? activeStyle : baseStyle)}
               to="/shoes"
