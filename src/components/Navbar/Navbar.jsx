@@ -94,7 +94,7 @@ const Navbar = () => {
         <Spacer />
         {isLargerThan ? (
           <HStack>
-            <NavLink
+            {/* <NavLink
               style={({ isActive }) => (isActive ? activeStyle : baseStyle)}
               to="/"
             >
@@ -105,7 +105,7 @@ const Navbar = () => {
               >
                 Home
               </Text>
-            </NavLink>
+            </NavLink> */}
             <NavLink
               style={({ isActive }) => (isActive ? activeStyle : baseStyle)}
               to="/allproducts"
@@ -115,7 +115,7 @@ const Navbar = () => {
                 my="4"
                 mx="2"
               >
-                AllProducts
+                Trang chủ
               </Text>
             </NavLink>
             {/* <NavLink
