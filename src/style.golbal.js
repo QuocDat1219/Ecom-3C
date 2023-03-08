@@ -83,11 +83,15 @@ export const textLongMaxWidth = [200]
 
 export const settings = {
     dots: false,
-    infinite: false,
-    speed: 500,
+    arrows: false,
+    fade: false,
+    infinite: true,
+    autoplay: true,
     slidesToShow: 5,
-    slidesToScroll: 4,
-    initialSlide: 0,
+    slidesToScroll: 5,
+    autoplaySpeed: 3000,
+    speed: 500,
+    initialSlide: 2,
     responsive: [
         {
             breakpoint: 1600,
