@@ -156,9 +156,7 @@ const Navbar = () => {
             </NavLink>
           </HStack>
         ) : null}
-
         <Spacer />
-
         <HStack>
           {/* <Box>
             <Icon
@@ -169,7 +167,6 @@ const Navbar = () => {
               as={BsSearch}
             />
           </Box> */}
-
           <Box onClick={handleHeart}>
             <Flex
               onClick={handleCart}

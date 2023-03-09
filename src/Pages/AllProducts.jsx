@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import FilterData from "../Filter/Filters/FilterData";
 import { getData } from "../redux/DataReducer/action";
+import Itop from "../components/iconTop/itop"
 import {
   Flex,
   Box,
@@ -73,6 +74,7 @@ const AllProducts = () => {
   return (
     <Box>
       <Navbar /> <br />
+      <Itop  />
       <Box w="80%" m="auto">
         <Carousel />
         <Trending />
