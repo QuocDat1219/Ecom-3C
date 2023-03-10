@@ -20,13 +20,16 @@ const Footer = () => {
   return (
     <div className="Footer">
       <Box
-        bg="black"
-        color="whitesmoke"
-        height={isSmallerThan ? "50vh" : "50vh"}
-        pt="3rem"
-        lineHeight="2rem"
+        lineHeight={"1.42857143"}
+        bgColor={"#f8f8f8"}
+        // height={isSmallerThan ? "30vh" : "30vh"}
+        pt="1rem"
+        borderBottom={"1px solid #e5e5e5"}
+        borderTop={"1px solid #e5e5e5"}
+
       >
         <Flex
+       
           justify={"space-evenly"}
           width={["100%", "100%", "100%", "100%"]}
           textAlign={isSmallerThan ? "left" : "center"}
@@ -34,14 +37,14 @@ const Footer = () => {
           flexDirection={isSmallerThan ? "row" : "column"}
         >
           <Box as={Flex} flexDirection="column">
-            <Heading>Product</Heading>
-            <Text as={Link} to="/allproducts?gender=MEN">Mens Collection</Text>
-            <Text as={Link} to="/allproducts?gender=WOMEN">Womens Collection</Text>
-            <Text as={Link} to="/allproducts?category=shoes" >Shoes Collection</Text>
-            <Text as={Link} to="/allproducts?category=clothes">Clothes Collection</Text>
+            <Text fontWeight={"bold"} fontSize={"12px"} >SHOP MYTINDIGITAL</Text>
+            <Text mt={"10px"}>Địa Chỉ : 211/31 Minh Phụng- Phường 9,, Quận 6, TP.HCM</Text>
+            <Text mt={"10px"} >Đại Diện: Nguyễn Kiều Ngọc Hân</Text>
+            <Text mt={"10px"}>Hotline: 093.3456.252</Text>
+            <Text mt={"10px"} mb={"30px"}>MST: 0310731578 Nơi cấp: Chi cục thuế Q6, ngày cấp: 29/03/2011</Text>
           </Box>
 
-          {isSmallerThan ? (
+          {/* {isSmallerThan ? (
             <Box>
               <Heading>Support</Heading>
               <Text>Help</Text>
@@ -60,9 +63,14 @@ const Footer = () => {
               <Text>Careers</Text>
               <Text>Company Apps</Text>
             </Box>
-          ) : null}
-          <Box mt="1rem" display={"flex"} gap="1rem" justifyContent={"center"}>
-            <a
+          ) : null} */}
+          <Box  >
+            <Text
+              textAlign={isSmallerThan ? "right" : "center"}
+              fontSize={isSmallerThan ? "12px" : "14px"}
+              pr={isSmallerThan ? "20px": ""}
+              >Copyright © 2015 by mytindigital. All Rights Reserved.</Text>
+            {/* <a
               href="https://www.linkedin.com/in/naresh-rajput/"
               target={"_blank"}
               rel="noreferrer"
@@ -82,7 +90,7 @@ const Footer = () => {
               rel="noreferrer"
             >
               <Avatar w={10} h={10} my="1rem" bg="white" src={portfolio} />
-            </a>
+            </a> */}
           </Box>
         </Flex>
       </Box>
