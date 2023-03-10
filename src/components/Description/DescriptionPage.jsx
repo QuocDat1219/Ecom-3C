@@ -192,6 +192,28 @@ const DescriptionPage = () => {
           </Box>
         </Box>
       </Flex>
+      <Box display={"flex"} justifyContent={"center"}>
+        <Text
+          position={"relative"}
+          height={"2px"}
+          bgColor={"#ed1c24"}
+          width={"100%"}
+          top={"50%"}
+          fontWeight={"bold"}
+          zIndex={1}
+        ></Text>
+
+        <Text
+          position={"absolute"}
+          textColor={"#263790"}
+          fontSize={"20px"}
+          top={0}
+          backgroundColor={"#fff"}
+          zIndex={9999}
+        >
+          MÔ TẢ SẢN PHẨM
+        </Text>
+      </Box>
     </div>
   );
 };

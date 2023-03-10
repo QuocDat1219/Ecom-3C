@@ -55,9 +55,9 @@ const Itop = () => {
         h={"100px"}
         objectFit={"cover"}
         src={tuananh}
-        // _hover={{
-        //   transform: "rotate(300deg)",
-        // }}
+        _active={{
+          transform: "rotate(400deg)",
+        }}
       />
     </Box>
     // </Flex>

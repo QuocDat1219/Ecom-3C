@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import FilterData from "../Filter/Filters/FilterData";
 import { getData } from "../redux/DataReducer/action";
-import Itop from "../components/iconTop/itop"
+import Itop from "../components/iconTop/itop";
 import {
   Flex,
   Box,
@@ -20,6 +20,7 @@ import Navbar from "../components/Navbar/Navbar";
 import ListProducts from "./ListProducts";
 import Trending from "../components/Trends/Trending";
 import Carousel from "../components/Carousel/Carousel";
+import { rspImageH } from "../style.golbal";
 // import Paginate from "../components/Paginatation/Paginate";
 //import FilterChecked from "../Filter/Filters/FilterChecked";
 const AllProducts = () => {
@@ -57,8 +58,8 @@ const AllProducts = () => {
   const handlerOpenFilter = () => {
     setOpenFilterData(!openFilterData);
   };
-  // End handlerOpenFilter
 
+  // End handlerOpenFilter
   // const postPerPage = 9;
   // const totalPosts = products?.length;
   // const indexOfLastPost = currentPage * postPerPage;
@@ -74,7 +75,7 @@ const AllProducts = () => {
   return (
     <Box>
       <Navbar /> <br />
-      <Itop  />
+      <Itop />
       <Box w="80%" m="auto">
         <Carousel />
         <Trending />

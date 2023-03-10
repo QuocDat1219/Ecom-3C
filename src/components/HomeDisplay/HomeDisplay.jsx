@@ -78,7 +78,6 @@ export const HomeDis = ({ item }) => {
             {name}
           </Text>
           <Box w="100%" h="1px" margin={"10px"} bgColor={colorHr} />
-
           <Text
             display={"flex"}
             justifyContent={"center"}

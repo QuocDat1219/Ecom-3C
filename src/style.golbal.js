@@ -93,6 +93,7 @@ export const settings = {
     speed: 500,
     initialSlide: 2,
     responsive: [
+
         {
             breakpoint: 1600,
             settings: {
@@ -102,6 +103,7 @@ export const settings = {
                 dots: false,
             },
         },
+        
         {
             breakpoint: 1024,
             settings: {
