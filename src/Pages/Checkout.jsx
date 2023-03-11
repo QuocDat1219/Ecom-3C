@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { CheckoutForm } from "../components/checkout/CheckoutForm";
 import CheckOutPage from "../components/checkout/CheckOutPage";
 import { InputCoupon } from "../components/InputCoupon/InputCoupon";
-import Navbar from "../components/Navbar/Navbar";
+import Navbar from "../components/Header/Navbar";
 import {
   checkCharacter,
   checkEmail,

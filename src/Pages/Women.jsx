@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useSearchParams } from "react-router-dom";
 import Loading from "../components/Loading/Loading";
-import Navbar from "../components/Navbar/Navbar";
+import Navbar from "../components/Header/Navbar";
 import ProductDis from "../components/ProductsDisplay/ProductDis";
 import FilterData from "../Filter/Filters/FilterData";
 import { getWomensData } from "../redux/PagesReducer/action";

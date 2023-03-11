@@ -16,7 +16,7 @@ import ProductDis from "../components/ProductsDisplay/ProductDis";
 import { useMediaQuery } from "@chakra-ui/react";
 import Loading from "../components/Loading/Loading";
 import { useLocation, useSearchParams } from "react-router-dom";
-import Navbar from "../components/Navbar/Navbar";
+import Navbar from "../components/Header/Navbar";
 import ListProducts from "./ListProducts";
 import Trending from "../components/Trends/Trending";
 import Carousel from "../components/Carousel/Carousel";

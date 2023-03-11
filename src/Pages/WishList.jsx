@@ -8,7 +8,7 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import { useSelector } from "react-redux";
-import Navbar from "../components/Navbar/Navbar";
+import Navbar from "../components/Header/Navbar";
 import WishListShow from "../components/wishlist/WishListShow";
 
 const WishList = () => {

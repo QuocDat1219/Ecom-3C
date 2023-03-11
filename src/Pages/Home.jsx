@@ -13,7 +13,7 @@ import Carousel from "../components/Carousel/Carousel";
 import Loading from "../components/Loading/Loading";
 import Trending from "../components/Trends/Trending";
 import { imagesData } from "../utils/data";
-import Navbar from "../components/Navbar/Navbar"
+import Navbar from "../components/Header/Navbar"
 
 const Home = () => {
   const loading = useSelector((store) => store.pagesReducer.isLoading);

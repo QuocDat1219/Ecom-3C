@@ -18,7 +18,7 @@ import { getData } from "../../redux/DataReducer/action";
 import { ListItem, UnorderedList } from "@chakra-ui/react";
 import { addToCart } from "../../redux/CartReducer/action";
 import { addToWishList } from "../../redux/WishReducer/action";
-import Navbar from "../Navbar/Navbar";
+import Navbar from "../Header/Navbar";
 // import { BsBagFill } from "react-icons/bs";
 const DescriptionPage = () => {
   const { id } = useParams();

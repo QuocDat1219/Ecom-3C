@@ -13,7 +13,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Carousel from "../components/Carousel/Carousel";
 import CheckOutPage from "../components/checkout/CheckOutPage";
 import Empty from "../components/Empty/EmptyFunction";
-import Navbar from "../components/Navbar/Navbar";
+import Navbar from "../components/Header/Navbar";
 import Trending from "../components/Trends/Trending";
 import { decQty, incQty, removeItem } from "../redux/CartReducer/action";
 

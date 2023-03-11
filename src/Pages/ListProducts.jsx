@@ -7,7 +7,7 @@ import ProductDis from "../components/ProductsDisplay/ProductDis";
 import { useMediaQuery } from "@chakra-ui/react";
 import Loading from "../components/Loading/Loading";
 import { useLocation, useSearchParams } from "react-router-dom";
-import Navbar from "../components/Navbar/Navbar";
+import Navbar from "../components/Header/Navbar";
 import { Truncate } from "@chakra-ui/react";
 import { bgColorPr, columnsCard, textColor } from "../style.golbal";
 const ListProducts = ({ products }) => {

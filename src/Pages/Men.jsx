@@ -7,7 +7,7 @@ import { Flex, Box, Spacer, Grid, useMediaQuery } from "@chakra-ui/react";
 import ProductDis from "../components/ProductsDisplay/ProductDis";
 import Loading from "../components/Loading/Loading";
 import { useLocation, useSearchParams } from "react-router-dom";
-import Navbar from "../components/Navbar/Navbar";
+import Navbar from "../components/Header/Navbar";
 
 const AllmensD = () => {
   const dispatch = useDispatch();
