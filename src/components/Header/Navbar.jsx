@@ -78,7 +78,7 @@ const Navbar = () => {
                   textDecoration: 'none',
                   fontWeight: 100,
                 }}
-                href={"allproducts"}
+                href={"/allproducts"}
               >
                 Trang chủ
               </Link>
