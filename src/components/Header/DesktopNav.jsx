@@ -23,7 +23,7 @@ const DesktopNav = (props) => {
 
                                 fontWeight={"blod"}
                                 display={"block"}
-                                fontSize={"20px"}
+                                fontSize={"14px"}
                                 padding={"20px 20px"}
                                 _hover={{
                                     textDecoration: 'none',

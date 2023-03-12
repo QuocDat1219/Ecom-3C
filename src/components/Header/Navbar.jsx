@@ -26,10 +26,10 @@ const Navbar = () => {
   return (
     <>
       <Box>
-        <Flex alignItems="center" h={"100px"} justifyContent="space-between">
+        <Flex alignItems="center" h={"80px"} justifyContent="space-between">
           <Flex alignItems="center" ml={200}>
-            <Image src={tuananh} alt="Logo" w="240px" h="75px" mr="4" />
-            <Input placeholder="Tìm kiếm sản phẩm" border={"1px"} borderColor={"red"} rounded={"none"} fontSize={"24px"} ml={150} pr={150} />
+            <Image src={tuananh} alt="Logo" w="240px" h="70px" mr="4" />
+            <Input placeholder="Tìm kiếm sản phẩm" border={"2px"} borderColor={"red"} rounded={"none"} fontSize={"14px"} ml={70} />
             <Button rounded={"none"} bg={"red"} color={"white"} fontWeight={"bold"} fontSize={30} w={120}><SearchIcon></SearchIcon></Button>
           </Flex>
           <Flex textAlign={"left"} flexDirection="column" mr={200}>
@@ -68,9 +68,9 @@ const Navbar = () => {
               <Link
                 p={2}
 
-                fontWeight={"blod"}
+                fontWeight={"600"}
                 display={"block"}
-                fontSize={"20px"}
+                fontSize={"14px"}
                 padding={"20px 20px"}
                 bg={'#ff0'}
                 color={"#1d3c84"}
@@ -80,7 +80,7 @@ const Navbar = () => {
                 }}
                 href={"/allproducts"}
               >
-                Trang chủ
+                TRANG CHỦ
               </Link>
               <DesktopNav data={NAV_ITEMS} />
             </Flex>
