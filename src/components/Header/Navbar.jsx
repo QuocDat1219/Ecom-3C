@@ -27,12 +27,12 @@ const Navbar = () => {
   100% { transform: scale(0.8) rotate(10deg); border-radius: 100%; delay: 0s }
 `;
 
-  const [isOpens, setIsOpens] = useState(false)
-  const [isMobile] = useMediaQuery("(max-width: 1058px)")
+  const [isOpens, setIsOpens] = useState(false);
+  const [isMobile] = useMediaQuery("(max-width: 1058px)");
 
   useEffect(() => {
-    setIsOpens(false)
-  }, [isMobile])
+    setIsOpens(false);
+  }, [isMobile]);
 
   const animation = `${animationKeyframes} 2s ease-in-out infinite`;
   return (
@@ -59,13 +59,20 @@ const Navbar = () => {
         <Collapse in={isOpen} animateOpacity>
           <MobileNav data={NAV_ITEMS} />
         </Collapse>
-        <Flex alignItems="center" h={"auto"} justifyContent={"space-around"} >
-
-
-          <Flex alignItems={"center"} flexDirection={isMobile ? "column" : "row"}>
-            <Image src={logomt} alt="Logo" w="240px" h="75px
-            " mr="4" />
-            <Flex w={["80%", "100%", "100%", "100%"]} >
+        <Flex alignItems="center" h={"auto"} justifyContent={"space-around"}>
+          <Flex
+            alignItems={"center"}
+            flexDirection={isMobile ? "column" : "row"}
+          >
+            <Image
+              src={logomt}
+              alt="Logo"
+              w="240px"
+              h="75px
+            "
+              mr="4"
+            />
+            <Flex w={["80%", "100%", "100%", "100%"]}>
               <Input
                 placeholder="Tìm kiếm sản phẩm"
                 borderColor={"#ee1c25"}
@@ -85,7 +92,11 @@ const Navbar = () => {
               </Button>
             </Flex>
           </Flex>
-          <Box display={!isMobile ? "flex" : "none"} justifyContent={"center"} alignItems={"center"}>
+          <Box
+            display={!isMobile ? "flex" : "none"}
+            justifyContent={"center"}
+            alignItems={"center"}
+          >
             <Box
               borderRadius={"100%"}
               p={"5px"}
@@ -123,7 +134,6 @@ const Navbar = () => {
           w={"100%"}
           borderColor={useColorModeValue("gray.200", "gray.900")}
         >
-
           <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
             <Flex
               display={{ base: "none", md: "flex" }}
@@ -131,7 +141,7 @@ const Navbar = () => {
               ml={"10%"}
               align={"center"}
             >
-             <Link
+              <Link
                 // p={2}
                 fontWeight={"bold"}
                 display={"block"}
@@ -140,7 +150,7 @@ const Navbar = () => {
                 lineHeight={"51px"}
                 _hover={{
                   textDecoration: "none",
-                  fontWeight:"100"
+                  fontWeight: "100",
                 }}
                 href={"/allproducts"}
                 bg={"#ff0"}
@@ -148,11 +158,12 @@ const Navbar = () => {
               >
                 TRANG CHỦ
               </Link>
-              <DesktopNav data={NAV_ITEMS} />
+              <Box zIndex={9999}>
+                <DesktopNav data={NAV_ITEMS} />
+              </Box>
             </Flex>
           </Flex>
         </Flex>
-
       </Box>
     </>
   );
@@ -164,7 +175,6 @@ const NAV_ITEMS = [
     label: "DANH MỤC SẢN PHẨM",
     children: [
       {
-
         label:
           "HÀNG MỚI VỀ - SẢN PHÂM THEO MÙA - CẬP NHẬT MỖI NGÀY- KÍCH XEM ĐẦY ĐỦ",
         href: "#",
@@ -234,7 +244,6 @@ const NAV_ITEMS = [
         label: "HÀNG THÁI HÀN NHẬT _ NHẬP KHẨU GIÁ ƯU ĐÃI -> BẤM XEM THÊM  ",
         href: "#",
       },
-
     ],
   },
   {
