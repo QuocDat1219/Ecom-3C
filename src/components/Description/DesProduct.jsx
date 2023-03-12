@@ -29,7 +29,7 @@ const DesProduct = () => {
     <div>
       <Box
         display={"flex"}
-        justifyContent={"center"}
+        justifyContent={"center"}s
         alignItems={"center"}
         fontWeight={"bold"}
         pt={["15%", "5%", "0", "0"]}
