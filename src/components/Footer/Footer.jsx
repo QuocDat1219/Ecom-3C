@@ -26,10 +26,8 @@ const Footer = () => {
         pt="1rem"
         borderBottom={"1px solid #e5e5e5"}
         borderTop={"1px solid #e5e5e5"}
-
       >
         <Flex
-       
           justify={"space-evenly"}
           width={["100%", "100%", "100%", "100%"]}
           textAlign={isSmallerThan ? "left" : "center"}
@@ -37,11 +35,17 @@ const Footer = () => {
           flexDirection={isSmallerThan ? "row" : "column"}
         >
           <Box as={Flex} flexDirection="column">
-            <Text fontWeight={"bold"} fontSize={"12px"} >SHOP MYTINDIGITAL</Text>
-            <Text mt={"10px"}>Địa Chỉ : 211/31 Minh Phụng- Phường 9,, Quận 6, TP.HCM</Text>
-            <Text mt={"10px"} >Đại Diện: Nguyễn Kiều Ngọc Hân</Text>
+            <Text fontWeight={"bold"} fontSize={"12px"}>
+              SHOP MYTINDIGITAL
+            </Text>
+            <Text mt={"10px"}>
+              Địa Chỉ : 211/31 Minh Phụng- Phường 9,, Quận 6, TP.HCM
+            </Text>
+            <Text mt={"10px"}>Đại Diện: Nguyễn Kiều Ngọc Hân</Text>
             <Text mt={"10px"}>Hotline: 093.3456.252</Text>
-            <Text mt={"10px"} mb={"30px"}>MST: 0310731578 Nơi cấp: Chi cục thuế Q6, ngày cấp: 29/03/2011</Text>
+            <Text mt={"10px"} mb={"30px"}>
+              MST: 0310731578 Nơi cấp: Chi cục thuế Q6, ngày cấp: 29/03/2011
+            </Text>
           </Box>
 
           {/* {isSmallerThan ? (
@@ -64,12 +68,15 @@ const Footer = () => {
               <Text>Company Apps</Text>
             </Box>
           ) : null} */}
-          <Box  >
+          <Box>
             <Text
               textAlign={isSmallerThan ? "right" : "center"}
-              fontSize={isSmallerThan ? "12px" : "14px"}
-              pr={isSmallerThan ? "20px": ""}
-              >Copyright © 2015 by mytindigital. All Rights Reserved.</Text>
+              fontSize={isSmallerThan ? "16px" : "15px"}
+              pr={isSmallerThan ? "20px" : ""}
+            >
+              Copyright © 2015 by mytindigital. All Rights Reserved.
+            </Text>
+
             {/* <a
               href="https://www.linkedin.com/in/naresh-rajput/"
               target={"_blank"}
