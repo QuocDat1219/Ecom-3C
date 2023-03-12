@@ -199,6 +199,6 @@ const NAV_ITEMS = [
   },
   {
     label: "VỀ CHÚNG TÔI",
-    href: "#",
+    href: "Aboutme",
   },
 ];

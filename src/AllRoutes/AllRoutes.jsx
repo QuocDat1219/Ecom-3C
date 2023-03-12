@@ -11,6 +11,7 @@ import Cart from "../Pages/Cart";
 import WishList from "../Pages/WishList";
 import Login from "../Pages/Login";
 import Register from "../Pages/SignUp";
+import AboutMe from "../components/AboutMe/AboutMe";
 import Checkout from "../Pages/Checkout";
 import Authentication from "../PrivateRoute/Authentication";
 import MyAccount from "../Pages/MyAccount";
@@ -21,7 +22,7 @@ const AllRoutes = () => {
       <Routes>
         <Route path="/" element={<AllProducts />} />
         <Route path="/allproducts" element={<AllProducts />} />
-        <Route path="/men" element={<Men />} />
+        <Route path="/Aboutme" element={<AboutMe />} />
         <Route path="/women" element={<Women />} />
         <Route path="/shoes" element={<AllshoesD />} />
         <Route path="/description/:id" element={<DescriptionPage />} />
