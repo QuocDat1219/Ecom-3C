@@ -34,29 +34,11 @@ const Navbar = () => {
   return (
     <>
       <Box>
-        <Flex alignItems="center" h={"73px"} justifyContent={"space-around"}>
-          <Flex alignItems="center">
-            {/* <Image src={tuananh} alt="Logo" w="240px" h="75px" mr="4" /> */}
-            <Input
-              placeholder="Tìm kiếm sản phẩm"
-              // border={"3px solid #ee1c25"}
-              borderColor={"#ee1c25"}
-              border={"2px"}
-              rounded={"none"}
-              pr={24}
-              h={"34px"}
-              // fontSize={"24px"}
-            />
-            <Button
-              rounded={"none"}
-              bg={"#ee1c25"}
-              color={"white"}
-              fontWeight={"bold"}
-              h={"34px"}
-              fontSize={"22px"}
-            >
-              <SearchIcon></SearchIcon>
-            </Button>
+        <Flex alignItems="center" h={"80px"} justifyContent="space-between">
+          <Flex alignItems="center" ml={200}>
+            <Image src={tuananh} alt="Logo" w="240px" h="70px" mr="4" />
+            <Input placeholder="Tìm kiếm sản phẩm" border={"2px"} borderColor={"red"} rounded={"none"} fontSize={"14px"} ml={70} />
+            <Button rounded={"none"} bg={"red"} color={"white"} fontWeight={"bold"} fontSize={30} w={120}><SearchIcon></SearchIcon></Button>
           </Flex>
           <Flex justifyContent={"center"} alignItems={"center"}>
             <Box
