@@ -3,6 +3,8 @@ import { Flex, Text, Stack, Link, useColorModeValue } from "@chakra-ui/react";
 import MobileNavItem from "./MobileNavItem";
 
 const MobileNav = (props) => {
+ 
+
   return (
     <Stack
       bg={useColorModeValue("#1d3c84", "#1d3c84")}

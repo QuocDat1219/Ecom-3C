@@ -12,24 +12,28 @@ import {
   Image,
   Img,
   keyframes,
+  useMediaQuery,
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon, SearchIcon } from "@chakra-ui/icons";
-import tuananh from "../../image/tuananh.gif";
+import logomt from "../../image/logomt.png";
 import DesktopNav from "./DesktopNav";
 import MobileNav from "./MobileNav";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 const Navbar = () => {
   const { isOpen, onToggle } = useDisclosure();
-  //   const animationKeyframes = keyframes`
-  //   0% { transform: scale(1) rotate(0); border-radius: 100%; }
-  //   25% { transform: scale(2) rotate(0); border-radius: 100%; }
-  //   50% { transform: scale(2) rotate(270deg); border-radius: 100%; }
-  //   75% { transform: scale(1) rotate(270deg); border-radius: 100%; }
-  //   100% { transform: scale(0.8) rotate(10deg); border-radius: 100%; }
-  // `;
+  const [isLargerThan] = useMediaQuery("(min-width: 768px)");
   const animationKeyframes = keyframes`
   100% { transform: scale(0.8) rotate(10deg); border-radius: 100%; delay: 0s }
 `;
+
+  const [isOpens, setIsOpens] = useState(false)
+  const [isMobile] = useMediaQuery("(max-width: 1058px)")
+
+  useEffect(() => {
+    setIsOpens(false)
+  }, [isMobile])
+
   const animation = `${animationKeyframes} 2s ease-in-out infinite`;
   return (
     <>
@@ -43,9 +47,9 @@ const Navbar = () => {
             onClick={onToggle}
             icon={
               isOpen ? (
-                <CloseIcon  w={8} h={8} />
+                <CloseIcon w={8} h={8} />
               ) : (
-                <HamburgerIcon  w={10} h={10} />
+                <HamburgerIcon w={10} h={10} />
               )
             }
             variant={"ghost"}
@@ -55,33 +59,33 @@ const Navbar = () => {
         <Collapse in={isOpen} animateOpacity>
           <MobileNav data={NAV_ITEMS} />
         </Collapse>
-        <Flex alignItems="center" h={"73px"} justifyContent={"space-around"}>
+        <Flex alignItems="center" h={"auto"} justifyContent={"space-around"} >
 
 
-          <Flex alignItems="center">
-            <Image src={tuananh} alt="Logo" w="240px" h="75px" mr="4" />
-            <Input
-              placeholder="Tìm kiếm sản phẩm"
-              // border={"3px solid #ee1c25"}
-              borderColor={"#ee1c25"}
-              border={"2px"}
-              rounded={"none"}
-              pr={24}
-              h={"34px"}
-            // fontSize={"24px"}
-            />
-            <Button
-              rounded={"none"}
-              bg={"#ee1c25"}
-              color={"white"}
-              fontWeight={"bold"}
-              h={"34px"}
-              fontSize={"22px"}
-            >
-              <SearchIcon></SearchIcon>
-            </Button>
+          <Flex alignItems={"center"} flexDirection={isMobile ? "column" : "row"}>
+            <Image src={logomt} alt="Logo" w="240px" h="75px
+            " mr="4" />
+            <Flex w={["80%", "100%", "100%", "100%"]} >
+              <Input
+                placeholder="Tìm kiếm sản phẩm"
+                borderColor={"#ee1c25"}
+                border={"2px"}
+                rounded={"none"}
+                h={"34px"}
+              />
+              <Button
+                rounded={"none"}
+                bg={"#ee1c25"}
+                color={"white"}
+                fontWeight={"bold"}
+                h={"34px"}
+                fontSize={"22px"}
+              >
+                <SearchIcon></SearchIcon>
+              </Button>
+            </Flex>
           </Flex>
-          <Flex justifyContent={"center"} alignItems={"center"}>
+          <Box display={!isMobile ? "flex" : "none"} justifyContent={"center"} alignItems={"center"}>
             <Box
               borderRadius={"100%"}
               p={"5px"}
@@ -109,7 +113,7 @@ const Navbar = () => {
                 0933770 888
               </Text>
             </Flex>
-          </Flex>
+          </Box>
         </Flex>
       </Box>
       <Box>
@@ -127,18 +131,20 @@ const Navbar = () => {
               ml={"10%"}
               align={"center"}
             >
-              <Link
+             <Link
+                // p={2}
                 fontWeight={"bold"}
                 display={"block"}
                 fontSize={"14px"}
-                padding={"15px 20px"}
-                bg={"#ff0"}
-                color={"#1d3c84"}
+                padding={"0px 20px"}
+                lineHeight={"51px"}
                 _hover={{
                   textDecoration: "none",
-                  fontWeight: 100,
+                  fontWeight:"100"
                 }}
                 href={"/allproducts"}
+                bg={"#ff0"}
+                color={"#1d3c84"}
               >
                 TRANG CHỦ
               </Link>
@@ -158,7 +164,7 @@ const NAV_ITEMS = [
     label: "DANH MỤC SẢN PHẨM",
     children: [
       {
-       
+
         label:
           "HÀNG MỚI VỀ - SẢN PHÂM THEO MÙA - CẬP NHẬT MỖI NGÀY- KÍCH XEM ĐẦY ĐỦ",
         href: "#",
@@ -183,6 +189,52 @@ const NAV_ITEMS = [
         label: "HÀNG THÁI HÀN NHẬT _ NHẬP KHẨU GIÁ ƯU ĐÃI -> BẤM XEM THÊM  ",
         href: "#",
       },
+      {
+        // label: "Freelance Projects",
+        label: "HÀNG THÁI HÀN NHẬT _ NHẬP KHẨU GIÁ ƯU ĐÃI -> BẤM XEM THÊM  ",
+        href: "#",
+      },
+      {
+        // label: "Freelance Projects",
+        label: "HÀNG THÁI HÀN NHẬT _ NHẬP KHẨU GIÁ ƯU ĐÃI -> BẤM XEM THÊM  ",
+        href: "#",
+      },
+      {
+        // label: "Freelance Projects",
+        label: "HÀNG THÁI HÀN NHẬT _ NHẬP KHẨU GIÁ ƯU ĐÃI -> BẤM XEM THÊM  ",
+        href: "#",
+      },
+      {
+        // label: "Freelance Projects",
+        label: "HÀNG THÁI HÀN NHẬT _ NHẬP KHẨU GIÁ ƯU ĐÃI -> BẤM XEM THÊM  ",
+        href: "#",
+      },
+      {
+        // label: "Freelance Projects",
+        label: "HÀNG THÁI HÀN NHẬT _ NHẬP KHẨU GIÁ ƯU ĐÃI -> BẤM XEM THÊM  ",
+        href: "#",
+      },
+      {
+        // label: "Freelance Projects",
+        label: "HÀNG THÁI HÀN NHẬT _ NHẬP KHẨU GIÁ ƯU ĐÃI -> BẤM XEM THÊM  ",
+        href: "#",
+      },
+      {
+        // label: "Freelance Projects",
+        label: "HÀNG THÁI HÀN NHẬT _ NHẬP KHẨU GIÁ ƯU ĐÃI -> BẤM XEM THÊM  ",
+        href: "#",
+      },
+      {
+        // label: "Freelance Projects",
+        label: "HÀNG THÁI HÀN NHẬT _ NHẬP KHẨU GIÁ ƯU ĐÃI -> BẤM XEM THÊM  ",
+        href: "#",
+      },
+      {
+        // label: "Freelance Projects",
+        label: "HÀNG THÁI HÀN NHẬT _ NHẬP KHẨU GIÁ ƯU ĐÃI -> BẤM XEM THÊM  ",
+        href: "#",
+      },
+
     ],
   },
   {
