@@ -20,7 +20,7 @@ import { getData } from "../../redux/DataReducer/action";
 import { ListItem, UnorderedList } from "@chakra-ui/react";
 import { addToCart } from "../../redux/CartReducer/action";
 import { addToWishList } from "../../redux/WishReducer/action";
-import Navbar from "../Navbar/Navbar";
+import Navbar from "../Header/Navbar";
 import { MdCheckCircle, MdSettings } from "react-icons/md";
 import { fsCard, titleColor } from "../../style.golbal";
 
@@ -29,7 +29,7 @@ const DesProduct = () => {
     <div>
       <Box
         display={"flex"}
-        justifyContent={"center"}
+        justifyContent={"center"}s
         alignItems={"center"}
         fontWeight={"bold"}
         pt={["15%", "5%", "0", "0"]}
