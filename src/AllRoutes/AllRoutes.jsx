@@ -16,6 +16,9 @@ import Checkout from "../Pages/Checkout";
 import Authentication from "../PrivateRoute/Authentication";
 import MyAccount from "../Pages/MyAccount";
 import AdminPage from "../Admin/AdminPage";
+import Payinfo from "../components/Payinfo/Payinfo";
+import WarrantyPolicy from "../components/WarrantyPolicy/WarrantyPolicy";
+import ShoppingGuide from "../components/ShoppingGuide/ShoppingGuide";
 const AllRoutes = () => {
   return (
     <div>
@@ -23,6 +26,9 @@ const AllRoutes = () => {
         <Route path="/" element={<AllProducts />} />
         <Route path="/allproducts" element={<AllProducts />} />
         <Route path="/Aboutme" element={<AboutMe />} />
+        <Route path="/Payinfo" element={<Payinfo/>}/>
+        <Route path="/WarrantyPolicy" element={<WarrantyPolicy/>}/>
+        <Route path="/ShoppingGuide" element={<ShoppingGuide/>}/>
         <Route path="/women" element={<Women />} />
         <Route path="/shoes" element={<AllshoesD />} />
         <Route path="/description/:id" element={<DescriptionPage />} />
