@@ -1,6 +1,6 @@
 import { Box, Flex, Image, Text, keyframes } from "@chakra-ui/react";
 import React, { useState } from "react";
-import tuananh from "../../image/tuananh.gif";
+import scroltop from "../../image/scroltop.png";
 import { motion } from "framer-motion";
 const Itop = () => {
   const animationKeyframes = keyframes`
@@ -51,13 +51,13 @@ const Itop = () => {
         bottom={6}
         position={"fixed"}
         zIndex={"9999"}
-        w={"100px"}
-        h={"100px"}
+        w={"51px"}
+        h={"51px"}
         objectFit={"cover"}
-        src={tuananh}
-        _active={{
-          transform: "rotate(400deg)",
-        }}
+        src={scroltop}
+        // _active={{
+        //   transform: "rotate(400deg)",
+        // }}
       />
     </Box>
     // </Flex>
