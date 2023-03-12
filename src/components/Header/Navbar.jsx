@@ -36,7 +36,7 @@ const Navbar = () => {
       <Box>
         <Flex alignItems="center" h={"73px"} justifyContent={"space-around"}>
           <Flex alignItems="center">
-            {/* <Image src={tuananh} alt="Logo" w="240px" h="75px" mr="4" /> */}
+            <Image src={tuananh} alt="Logo" w="240px" h="75px" mr="4" />
             <Input
               placeholder="Tìm kiếm sản phẩm"
               // border={"3px solid #ee1c25"}
