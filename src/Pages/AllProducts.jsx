@@ -17,7 +17,7 @@ import { useMediaQuery } from "@chakra-ui/react";
 import Loading from "../components/Loading/Loading";
 import { useLocation, useSearchParams } from "react-router-dom";
 import Navbar from "../components/Header/Navbar";
-import ListProducts from "./ListProducts";
+import ListProducts from "../components/ListProductsCart/ListProducts";
 import Trending from "../components/Trends/Trending";
 import Carousel from "../components/Carousel/Carousel";
 import { rspImageH } from "../style.golbal";
