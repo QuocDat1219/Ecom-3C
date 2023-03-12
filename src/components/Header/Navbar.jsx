@@ -34,7 +34,30 @@ const Navbar = () => {
   return (
     <>
       <Box>
+        <Flex
+          flex={{ base: 3, md: "auto" }}
+          ml={{ base: 1 }}
+          display={{ base: "flex", md: "none" }}
+        >
+          <IconButton
+            onClick={onToggle}
+            icon={
+              isOpen ? (
+                <CloseIcon  w={8} h={8} />
+              ) : (
+                <HamburgerIcon  w={10} h={10} />
+              )
+            }
+            variant={"ghost"}
+            aria-label={"Toggle Navigation"}
+          />
+        </Flex>
+        <Collapse in={isOpen} animateOpacity>
+          <MobileNav data={NAV_ITEMS} />
+        </Collapse>
         <Flex alignItems="center" h={"73px"} justifyContent={"space-around"}>
+
+
           <Flex alignItems="center">
             <Image src={tuananh} alt="Logo" w="240px" h="75px" mr="4" />
             <Input
@@ -45,7 +68,7 @@ const Navbar = () => {
               rounded={"none"}
               pr={24}
               h={"34px"}
-              // fontSize={"24px"}
+            // fontSize={"24px"}
             />
             <Button
               rounded={"none"}
@@ -96,24 +119,7 @@ const Navbar = () => {
           w={"100%"}
           borderColor={useColorModeValue("gray.200", "gray.900")}
         >
-          <Flex
-            flex={{ base: 1, md: "auto" }}
-            ml={{ base: 1 }}
-            display={{ base: "flex", md: "none" }}
-          >
-            <IconButton
-              onClick={onToggle}
-              icon={
-                isOpen ? (
-                  <CloseIcon w={3} h={3} />
-                ) : (
-                  <HamburgerIcon w={5} h={5} />
-                )
-              }
-              variant={"ghost"}
-              aria-label={"Toggle Navigation"}
-            />
-          </Flex>
+
           <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
             <Flex
               display={{ base: "none", md: "flex" }}
@@ -141,9 +147,6 @@ const Navbar = () => {
           </Flex>
         </Flex>
 
-        <Collapse in={isOpen} animateOpacity>
-          <MobileNav data={NAV_ITEMS} />
-        </Collapse>
       </Box>
     </>
   );
@@ -155,29 +158,29 @@ const NAV_ITEMS = [
     label: "DANH MỤC SẢN PHẨM",
     children: [
       {
-        // label: "Job Board",
-        subLabel:
+       
+        label:
           "HÀNG MỚI VỀ - SẢN PHÂM THEO MÙA - CẬP NHẬT MỖI NGÀY- KÍCH XEM ĐẦY ĐỦ",
         href: "#",
       },
       {
         // label: "Freelance Projects",
-        subLabel: "HÀNG THÁI HÀN NHẬT _ NHẬP KHẨU GIÁ ƯU ĐÃI -> BẤM XEM THÊM  ",
+        label: "HÀNG THÁI HÀN NHẬT _ NHẬP KHẨU GIÁ ƯU ĐÃI -> BẤM XEM THÊM  ",
         href: "#",
       },
       {
         // label: "Freelance Projects",
-        subLabel: "HÀNG THÁI HÀN NHẬT _ NHẬP KHẨU GIÁ ƯU ĐÃI -> BẤM XEM THÊM  ",
+        label: "HÀNG THÁI HÀN NHẬT _ NHẬP KHẨU GIÁ ƯU ĐÃI -> BẤM XEM THÊM  ",
         href: "#",
       },
       {
         // label: "Freelance Projects",
-        subLabel: "HÀNG THÁI HÀN NHẬT _ NHẬP KHẨU GIÁ ƯU ĐÃI -> BẤM XEM THÊM  ",
+        label: "HÀNG THÁI HÀN NHẬT _ NHẬP KHẨU GIÁ ƯU ĐÃI -> BẤM XEM THÊM  ",
         href: "#",
       },
       {
         // label: "Freelance Projects",
-        subLabel: "HÀNG THÁI HÀN NHẬT _ NHẬP KHẨU GIÁ ƯU ĐÃI -> BẤM XEM THÊM  ",
+        label: "HÀNG THÁI HÀN NHẬT _ NHẬP KHẨU GIÁ ƯU ĐÃI -> BẤM XEM THÊM  ",
         href: "#",
       },
     ],

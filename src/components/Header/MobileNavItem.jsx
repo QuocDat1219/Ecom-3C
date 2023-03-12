@@ -18,7 +18,7 @@ const MobileNavItem = ({ label, children, href }) => {
 
     return (
 
-        <Stack spacing={4} onClick={children && onToggle}>
+        <Stack spacing={4} color={"white"}  onClick={children && onToggle}>
 
             <Flex
                 p={2}
@@ -27,6 +27,7 @@ const MobileNavItem = ({ label, children, href }) => {
                 href={href ?? '#'}
                 justify={'space-between'}
                 align={'center'}
+                color={"white"}
                 _hover={{
                     textDecoration: 'none',
                 }}>
@@ -54,13 +55,13 @@ const MobileNavItem = ({ label, children, href }) => {
                     borderLeft={4}
                     borderStyle={'solid'}
                     borderColor={useColorModeValue('gray.200', 'gray.700')}
-                    align={'start'}
+                    textAlign={"left"}
                     color={'white'}
                 >
 
                     {children &&
                         children.map((child) => (
-                            <Link key={child.label} py={2} href={child.href}>
+                            <Link key={child.label} color={"white"} py={2} href={child.href}>
                                 {child.label}
                             </Link>
                         ))}
