@@ -140,36 +140,39 @@ const DescriptionPage = () => {
                     {/* {currentProducts.final_price}.50 */}
                   </span>
                 </Text>
-                <Box
-                  textAlign={"center"}
-                  textTransform={"uppercase"}
-                  fontSize={["13px", "13px", "13px", "18px"]}
-                  fontWeight={"bold"}
-                  position={"relative"}
-                  marginTop={"5%"}
-                >
-                  <Text
-                    position={"absolute"}
-                    height={"2px"}
-                    bgColor={"#ed1c24"}
-                    width={"100%"}
-                    top={"50%"}
-                    left={"0"}
+                <Box pb={["10%", "5%", "5%", "5%"]}>
+                  <Box
+                    textAlign={"center"}
+                    textTransform={"uppercase"}
                     fontWeight={"bold"}
-                    zIndex={1}
-                    marginTop={"-1px"}
-                  ></Text>
-                  <Text
-                    display={"inline-block"}
-                    background={"#fff"}
                     position={"relative"}
-                    zIndex={10}
-                    padding={"0 10px"}
-                    color={"#263790"}
+                    mt={"5%"}
                   >
-                    Thông tin - tính năng
-                  </Text>
+                    <Text
+                      position={"absolute"}
+                      height={"2px"}
+                      bgColor={"#ed1c24"}
+                      width={"100%"}
+                      top={"50%"}
+                      left={"0"}
+                      fontWeight={"bold"}
+                      zIndex={1}
+                      marginTop={"-1px"}
+                    ></Text>
+                    <Text
+                      display={"inline-block"}
+                      background={"#fff"}
+                      position={"relative"}
+                      zIndex={10}
+                      fontSize={["14px", "14px", "15px", "18px"]}
+                      padding={"0 10px"}
+                      color={"#263790"}
+                    >
+                      Thông tin - tính năng
+                    </Text>
+                  </Box>
                 </Box>
+
                 <Box display={"inline-block"}>
                   <a href="https://apps.apple.com/us/app/mytindigital/id1372586342?ls=1">
                     <img

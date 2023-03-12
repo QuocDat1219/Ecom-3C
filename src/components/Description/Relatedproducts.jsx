@@ -59,6 +59,8 @@ const Relatedproducts = () => {
           justifyContent={"left"}
           alignItems={"center"}
           fontWeight={"bold"}
+          pt={["10%", "5%", "0", "0"]}
+          pb={["10%", "5%", "5%", "5%"]}
         >
           <Text
             position={"relative"}
@@ -74,7 +76,7 @@ const Relatedproducts = () => {
             wordwrap={""}
             position={"absolute"}
             textColor={"#263790"}
-            fontSize={["14px", "14px", "16px", "18px"]}
+            fontSize={["15px", "15px", "16px", "18px"]}
             backgroundColor={"#fff"}
             p={("0", "10px")}
             zIndex={9999}

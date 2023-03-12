@@ -29,7 +29,7 @@ const DesProduct = () => {
     <div>
       <Box
         display={"flex"}
-        justifyContent={"center"}s
+        justifyContent={"center"}
         alignItems={"center"}
         fontWeight={"bold"}
         pt={["15%", "5%", "0", "0"]}
@@ -48,7 +48,7 @@ const DesProduct = () => {
           wordwrap={""}
           position={"absolute"}
           textColor={"#263790"}
-          fontSize={["14px", "14px", "16px", "18px"]}
+          fontSize={["15px", "15px", "16px", "18px"]}
           backgroundColor={"#fff"}
           p={("0", "10px")}
           zIndex={9999}
@@ -59,7 +59,7 @@ const DesProduct = () => {
       <Flex
         mt={12}
         alignItems={"center"}
-        justifyContent={"center"}
+        justifyContent={"flex-start"}
         textColor={titleColor}
         fontSize={["14px", "14px", "14px", fsCard]}
       >

@@ -77,6 +77,28 @@ const AllProducts = () => {
       <Navbar /> <br />
       <Itop />
       <Box w="80%" m="auto">
+        <Box>
+          <Text
+            w={"100%"}
+            color={"blue"}
+            borderTop={"1px solid #337ab7"}
+            paddingTop={"10px"}
+          ></Text>
+          <Text
+            fontSize={["13px", "13px", "13px", "17px"]}
+            fontWeight={"bold"}
+            textAlign={"left"}
+          >
+            Gõ từ khóa tìm kiếm vào khung trên nhé!
+          </Text>
+          <Text
+            w={"100%"}
+            marginTop={"20px"}
+            color={"blue"}
+            borderTop={"1px solid #eee"}
+            marginBottom={"20px"}
+          ></Text>
+        </Box>
         <Carousel />
         <Trending />
       </Box>
