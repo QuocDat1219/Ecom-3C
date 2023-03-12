@@ -62,7 +62,9 @@ export default class CenterMode extends Component {
     return (
       <Carousel>
         <div>
-          <img src="https://s3.amazonaws.com/static.neostack.com/img/react-slick/abstract02.jpg" />
+          <img
+            src="https://s3.amazonaws.com/static.neostack.com/img/react-slick/abstract02.jpg"
+          />
         </div>
         <div>
           <img src="https://s3.amazonaws.com/static.neostack.com/img/react-slick/abstract03.jpg" />

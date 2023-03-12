@@ -185,7 +185,7 @@ const DescriptionPage = () => {
                   </a>
                 </Box>
                 <Text
-                  fontSize={["13px", "13px", "13px", "18px"]}
+                  fontSize={["15px", "15px", "15px", "18px"]}
                   fontWeight={"bold"}
                   color={"blue"}
                 >
@@ -203,7 +203,7 @@ const DescriptionPage = () => {
                   </a>
                 </Box>
                 <Text
-                  fontSize={["13px", "13px", "13px", "18px"]}
+                  fontSize={["15px", "15px", "15px", "18px"]}
                   fontWeight={"bold"}
                   color={"blue"}
                 >
@@ -256,7 +256,7 @@ const DescriptionPage = () => {
             </UnorderedList>
           </Box> */}
           </Box>
-          <Box w={"50%"} min-height={"100vh"}>
+          <Box w={"50%"} maxW={"768px"} min-height={"100vh"} minW={"300px"}>
             <CenterMode />
           </Box>
         </Flex>
