@@ -239,15 +239,15 @@ const NAV_ITEMS = [
   },
   {
     label: "HƯỚNG DẪN MUA HÀNG",
-    href: "#",
+    href: "ShoppingGuide",
   },
   {
     label: "QUY ĐỊNH BẢO HÀNH CHUNG",
-    href: "#",
+    href: "WarrantyPolicy",
   },
   {
     label: "THÔNG TIN THANH TOÁN",
-    href: "#",
+    href: "Payinfo",
   },
   {
     label: "VỀ CHÚNG TÔI",
