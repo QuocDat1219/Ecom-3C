@@ -1,4 +1,3 @@
-import { Box, Heading, Text } from "@chakra-ui/react";
 import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Slider from "react-slick";
@@ -15,7 +14,21 @@ import {
   titleColor,
 } from "../../style.golbal";
 import { ChevronRightIcon } from "@chakra-ui/icons";
-const Trending = () => {
+import {
+  Badge,
+  Box,
+  Button,
+  Flex,
+  Heading,
+  Image,
+  List,
+  ListIcon,
+  OrderedList,
+  Text,
+  useMediaQuery,
+  useToast,
+} from "@chakra-ui/react";
+const Relatedproducts = () => {
   const dispatch = useDispatch();
   // const mensD = useSelector((store) => store.pagesReducer.mensD);
   const mensD = useSelector((store) => store?.dataReducer?.products);
@@ -41,18 +54,34 @@ const Trending = () => {
   return (
     <div>
       <Box position={"relative"}>
-        <Heading
-          // m={3}
-          lineHeight={"50px"}
-          align={"center"}
-          fontSize={"25px"}
-          color={titleColor}
-          fontStyle={"bold"}
-          fontWeight={400}
+        <Box
+          display={"flex"}
+          justifyContent={"left"}
+          alignItems={"center"}
+          fontWeight={"bold"}
         >
-          {" "}
-          SẢN PHẨM MỚI{" "}
-        </Heading>
+          <Text
+            position={"relative"}
+            height={"2px"}
+            bgColor={"#ed1c24"}
+            width={"100%"}
+            top={"50%"}
+            fontWeight={"bold"}
+            zIndex={1}
+          ></Text>
+
+          <Text
+            wordwrap={""}
+            position={"absolute"}
+            textColor={"#263790"}
+            fontSize={["14px", "14px", "16px", "18px"]}
+            backgroundColor={"#fff"}
+            p={("0", "10px")}
+            zIndex={9999}
+          >
+            CÁC SẢN PHẨM LIÊN QUAN
+          </Text>
+        </Box>
         <Slider {...settings} ref={sliderRef}>
           {mensD?.length > 0 &&
             mensD.map((item) => {
@@ -102,22 +131,8 @@ const Trending = () => {
           ></Text>
         </Box>
       </Box>
-      {/* <Box
-        position={"absolute"}
-        _after={{
-          content: "' '",
-          position: "absolute",
-          color: "red",
-          bgColor: "yellow",
-          top: "-150px",
-          left: 0,
-          zIndex: -1,
-          w: 10,
-          h: 10,
-        }}
-      ></Box> */}
     </div>
   );
 };
 
-export default Trending;
+export default Relatedproducts;
