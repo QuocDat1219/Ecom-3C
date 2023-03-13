@@ -16,10 +16,10 @@ const AllmensD = () => {
   const [isLargerThan] = useMediaQuery("(min-width: 768px)");
   const [searchParams] = useSearchParams();
   const location = useLocation();
+  
   useEffect(() => {
     if (location || mensD?.length === 0) {
       const sortBy = searchParams.get("sortBy");
-
       const queryParams = {
         params: {
           category: searchParams.getAll("category"),
@@ -33,6 +33,7 @@ const AllmensD = () => {
       dispatch(getMensData(queryParams));
     }
   }, [dispatch, location.search, mensD?.length, searchParams]);
+
   return (
     <div className="AllmensD">
       <Navbar /> <br />
