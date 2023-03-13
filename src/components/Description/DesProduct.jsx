@@ -23,7 +23,13 @@ import { addToWishList } from "../../redux/WishReducer/action";
 import Navbar from "../Header/Navbar";
 import { MdCheckCircle, MdSettings } from "react-icons/md";
 import { fsCard, titleColor } from "../../style.golbal";
-
+import {
+  colorName,
+  colorTitle,
+  DescriptionPage_fs,
+  colorPage,
+  DescriptionPage_size,
+} from "../../style.golbal";
 const DesProduct = () => {
   return (
     <div>
@@ -37,7 +43,7 @@ const DesProduct = () => {
         <Text
           position={"relative"}
           height={"2px"}
-          bgColor={"#ed1c24"}
+          bgColor={colorPage}
           width={"100%"}
           top={"50%"}
           fontWeight={"bold"}
@@ -47,8 +53,8 @@ const DesProduct = () => {
         <Text
           wordwrap={""}
           position={"absolute"}
-          textColor={"#263790"}
-          fontSize={["15px", "15px", "16px", "18px"]}
+          textColor={colorName}
+          fontSize={DescriptionPage_fs}
           backgroundColor={"#fff"}
           p={("0", "10px")}
           zIndex={9999}
@@ -61,12 +67,15 @@ const DesProduct = () => {
         alignItems={"center"}
         justifyContent={"flex-start"}
         textColor={titleColor}
-        fontSize={["14px", "14px", "14px", fsCard]}
+        fontSize={[fsCard, fsCard, fsCard, fsCard]}
       >
         <List textAlign={"start"}>
           <ListItem>
             HẠN SỬ DỤNG : Sử dụng dài hạn
-            <UnorderedList textAlign={"start"} lineHeight={[8, 8, 8, 10]}>
+            <UnorderedList
+              textAlign={"start"}
+              lineHeight={[8, 8, 8, 10]}
+            >
               <ListItem>
                 {" "}
                 Là loại thuốc diệt chuột đa liều, khi chuột ăn phải sẽ chết sau

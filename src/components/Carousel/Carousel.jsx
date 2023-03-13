@@ -22,9 +22,19 @@ import {
   TableCaption,
   TableContainer,
 } from "@chakra-ui/react";
+import { Link } from "@chakra-ui/react";
+import {
+  Carousel_color,
+  Carousel_bgcolor,
+  Carousel_Rpsize,
+  Carousel_fontsize,
+  Carousel_colortitle,
+  Carousel_font,
+} from "../../style.golbal";
+
 // import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
 import Slider from "react-slick";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 // const settings = {
 //   dots: true,
@@ -44,14 +54,14 @@ export default function Carousel() {
   const top = useBreakpointValue({ base: "90%", md: "50%" });
   const side = useBreakpointValue({ base: "30%", md: "40px" });
   const mapUrl = `https://goo.gl/maps/bYnwcnxfrFgiQok58`;
-  const cards = [
-    {
-      id: 1000,
-      title:
-        "CHUYÊN SỈ CÁC MẶT HÀNG GIA DỤNG-ĐIỆN TỬ-KHUYẾN MÃI- HÀNG XU HƯỚNG",
-      text: "ᴆɪ̣ᴀ ᴄʜɪ̉  :211/31 ᴍɪɴʜ ᴘʜᴜ̣ɴɢ , ᴘ9, ǫ6  ->Maps chỉ đường<-",
-    },
-  ];
+  // const cards = [
+  //   {
+  //     id: 1000,
+  //     title:
+  //       "CHUYÊN SỈ CÁC MẶT HÀNG GIA DỤNG-ĐIỆN TỬ-KHUYẾN MÃI- HÀNG XU HƯỚNG",
+  //     text: "ᴆɪ̣ᴀ ᴄʜɪ̉  :211/31 ᴍɪɴʜ ᴘʜᴜ̣ɴɢ , ᴘ9, ǫ6  ->Maps chỉ đường<-",
+  //   },
+  // ];
 
   return (
     // <Box
@@ -206,9 +216,9 @@ export default function Carousel() {
           <Thead>
             <Tr>
               <Th
-                color={"#ff0000"}
-                backgroundColor={"#f5f5f5"}
-                fontSize={["10px", "12px", "14px", "15px"]}
+                color={Carousel_color}
+                backgroundColor={Carousel_bgcolor}
+                fontSize={Carousel_Rpsize}
                 wordwrap={"break-word"}
               >
                 CHUYÊN SỈ CÁC MẶT HÀNG GIA DỤNG-ĐIỆN TỬ-KHUYẾN MÃI- HÀNG XU
@@ -218,21 +228,24 @@ export default function Carousel() {
           </Thead>
           <Tr>
             <Th
-              color={"blue"}
-              fontSize={"14px"}
-              fontFamily={"Arial, sans-serif"}
+              color={Carousel_colortitle}
+              fontSize={Carousel_fontsize}
+              fontFamily={Carousel_font}
               borderColor="transparent"
               wordwrap={"break-word"}
             >
               Địa chỉ :211/31 MINH PHỤNG. P9, Q6 &#8594;{" "}
-              <a href={mapUrl}>Maps chỉ đường</a> &#8592;
+              <Link href={mapUrl} color="#337ab7" textDecoration={"none"}>
+                Maps chỉ đường
+              </Link>{" "}
+              &#8592;
             </Th>
           </Tr>
           <Tr>
             <Th
-              color={"blue"}
-              fontSize={["10px", "12px", "14px", "15px"]}
-              fontFamily={"Arial, sans-serif"}
+              color={Carousel_colortitle}
+              fontSize={Carousel_fontsize}
+              fontFamily={Carousel_font}
               borderColor="transparent"
               wordwrap={"break-word"}
             >
@@ -241,9 +254,9 @@ export default function Carousel() {
           </Tr>
           <Tr>
             <Th
-              color={"red"}
-              fontSize={["10px", "12px", "14px", "15px"]}
-              fontFamily={"Arial, sans-serif"}
+              color={Carousel_color}
+              fontSize={Carousel_fontsize}
+              fontFamily={Carousel_font}
               borderColor="transparent"
               wordwrap={"break-word"}
             >
@@ -253,9 +266,9 @@ export default function Carousel() {
           </Tr>
           <Tr>
             <Th
-              color={"blue"}
-              fontSize={["10px", "12px", "14px", "15px"]}
-              fontFamily={"Arial, sans-serif"}
+              color={Carousel_colortitle}
+              fontSize={Carousel_fontsize}
+              fontFamily={Carousel_font}
               borderColor="transparent"
               wordwrap={"break-word"}
             >

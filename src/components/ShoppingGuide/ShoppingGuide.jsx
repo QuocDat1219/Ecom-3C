@@ -2,6 +2,12 @@ import { Box, Flex, Text } from "@chakra-ui/react";
 import Navbar from "../Header/Navbar";
 import Itop from "../iconTop/itop";
 import Loading from "../Loading/Loading";
+import {
+  ShoppingGuide_colorR,
+  ShoppingGuide_colorB,
+  ShoppingGuide_size,
+  ShoppingGuide_font,
+} from "../../style.golbal";
 const ShoppingGuide = () => {
   return (
     <div>
@@ -15,10 +21,7 @@ const ShoppingGuide = () => {
           gap={20}
           padding={"5px"}
         >
-          <Text
-            fontSize={"16px"}
-            fontFamily={"Helvetica Neue, Helvetica, Arial, sans-serif;"}
-          >
+          <Text fontSize={ShoppingGuide_size} fontFamily={ShoppingGuide_font}>
             <Text
               justifyContent={"center"}
               alignItems={"center"}
@@ -27,27 +30,27 @@ const ShoppingGuide = () => {
               <Text fontSize={"26pt"}>
                 I/ CÁCH MUA HÀNG LẺ VÀ ĐƯỢC GIAO TẬN NHÀ NỘI THÀNH HỒ CHÍ MINH
               </Text>
-              <Text color={"red"} fontStyle={"italic"}>
+              <Text color={ShoppingGuide_colorR} fontStyle={"italic"}>
                 <Text>
                   CÁCH THỨC MUA HÀNG TRONG NỘI THÀNH HCM SỐ LƯỢNG DƯỚI 2TR KHÁCH
                   VUI LÒNG
                 </Text>
-                <Text color={"blue"}>BƯỚC-1</Text>
+                <Text color={ShoppingGuide_colorB}>BƯỚC-1</Text>
                 <Text>
                   GỬI ĐƠN HÀNG ZALO :0903884900-0934456252-0933770888 <br /> (
                   lưu ghi rỏ mã hàng , tên sản phẩm , số lượng cần mua)
                 </Text>
-                <Text color={"blue"}>BƯỚC-2</Text>
+                <Text color={ShoppingGuide_colorB}>BƯỚC-2</Text>
                 <Text>
                   BÊN SHOP BÁO LẠI CHI TIẾT SẢN PHẨM CÒN , GIÁ TỪNG LOẠI THEO
                   PHIẾU XUẤT
                 </Text>
-                <Text color={"blue"}>BƯỚC-3</Text>
+                <Text color={ShoppingGuide_colorB}>BƯỚC-3</Text>
                 <Text>
                   QUÝ KHÁCH CHUYỂN KHOẢN THEO CÁC TK BÊN DƯỚI - SAU KHI NHẬN
                   ĐƯỢC TIỀN ĐỦ
                 </Text>
-                <Text color={"blue"}>BƯỚC-4</Text>
+                <Text color={ShoppingGuide_colorB}>BƯỚC-4</Text>
                 <Text>
                   BÊN MÌNH SẼ GỬI GRAB/GIAO TẬN NƠI TRONG NGÀY- PHÍ GH KHÁCH
                   THANH TOÁN CHO DỊCH VỤ GIAO HÀNG
@@ -71,7 +74,7 @@ const ShoppingGuide = () => {
               không?
               <br /> Xin Đáp
             </Text>
-            <Text color={"blue"}>
+            <Text color={ShoppingGuide_colorB}>
               Thế mạnh của mytindigital.com là bán hàng online, hàng sẽ được
               giao tận nơi cho quý khách trên phạm vi nội thành Hồ Chí Minh ,
               nên quý khách an tâm Khi mua Hàng tại www.mytindigital.com Điều
@@ -85,7 +88,7 @@ const ShoppingGuide = () => {
               .Tôi thấy web có nhiều sản phẩm hay muốn mua nhưng không biết làm
               thế nào để đặt hàng? <br /> Đáp
             </Text>
-            <Text color={"blue"}>
+            <Text color={ShoppingGuide_colorB}>
               Quý khách có thể đặt hàng qua 3 cách sau: <br /> - Qua điện thoại:
               Quý khách có thể sms danh sách các sản phẩm cần mua vào số đt zalo
               0934 456 252 , hoặc đọc cho nhân viên của shop ghi lại. <br /> -
@@ -103,11 +106,13 @@ const ShoppingGuide = () => {
               bảo sau khi thanh toán sẽ nhận được hàng?
             </Text>
             <Text fontWeight={"bold"}>
-              <Text color={"blue"}>Nếu ở các quận nội thành HCM,</Text> Quý
-              khách có thể đên Địa chỉ 837 Hồng Bàng Phường 9/quận 6 THCM để xem
-              hàng mà mua hàng được dễ dàng hơn
+              <Text color={ShoppingGuide_colorB}>
+                Nếu ở các quận nội thành HCM,
+              </Text>{" "}
+              Quý khách có thể đên Địa chỉ 837 Hồng Bàng Phường 9/quận 6 THCM để
+              xem hàng mà mua hàng được dễ dàng hơn
             </Text>
-            <Text fontWeight={"bold"} color={"blue"}>
+            <Text fontWeight={"bold"} color={ShoppingGuide_colorB}>
               Các tỉnh thành khác- QUÝ KHÁCH THANH TOÁN THEO PHƯƠNG THỨC- CHUYỂN
               KHOẢN TRƯỚC NHẬN HÀNG SAU- THỜI GIAN NHẬN HÀNG TỪ 12H ĐẾN 48 GIỜ
               TÙY TỪNG ĐỊA PHƯƠNG-
@@ -118,14 +123,18 @@ const ShoppingGuide = () => {
             </Text>
             <Box border={"1px solid black"}>
               <Text>
-                <Text color={"red"} fontWeight={"bold"}>
+                <Text color={ShoppingGuide_colorR} fontWeight={"bold"}>
                   Gặp bất cứ vẫn đề gì trong việc mua hàng & chuyển khoản vui
                   lòng gọi ngay
                 </Text>
-                <Text color={"blue"} fontSize={"24px"} fontWeight={"bold"}>
+                <Text
+                  color={ShoppingGuide_colorB}
+                  fontSize={"24px"}
+                  fontWeight={"bold"}
+                >
                   0933 456 252 Mr Trường - Giờ phục vụ 9h đên 19h các ngày
                 </Text>
-                <Text color={"blue"}>
+                <Text color={ShoppingGuide_colorB}>
                   Hàng sau khi ship, quý khách có thể theo dõi hành trình đường
                   đi dễ dàng trên internet (xem thêm hướng dẫn Tra cứu trạng
                   thái, hành trình hàng mua), <br /> đối với quý khách ở các
@@ -142,7 +151,7 @@ const ShoppingGuide = () => {
             </Box>
             <Box border={"1px solid black"}>
               <Text>
-                <Text color={"red"}>
+                <Text color={ShoppingGuide_colorR}>
                   6. QUY ĐINH BẢO HÀNH <br /> 6-1- Thẻ Nhớ - BH 12 tháng -ĐK- (
                   Có tem, còn thời gian bảo hành- logo sản phẩm rỏ ràng, không
                   nứt .gảỷ , biến dạng, trầy xướt do dùng vật cứng can thiệp){" "}
@@ -157,7 +166,6 @@ const ShoppingGuide = () => {
                 </Text>
                 <Text fontWeight={"bold"}>Đáp</Text>
                 <Text>
-                 
                   Chúng tôi sẽ phục vụ cho bạn mua 1 món với giá trên bảng giá
                   với các điều kiện sau Đến shop bạn chỉ cần đọc mã sản phẩm và
                   số lượng cần mua những mặt hành chúng tôi đang có, NVGH sẽ

@@ -24,6 +24,13 @@ import CenterMode from "./Customimage";
 import Relatedproducts from "./Relatedproducts";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import {
+  colorName,
+  colorTitle,
+  DescriptionPage_fs,
+  colorPage,
+  DescriptionPage_size,
+} from "../../style.golbal";
 // import { BsBagFill } from "react-icons/bs";
 const DescriptionPage = () => {
   const { id } = useParams();
@@ -109,7 +116,7 @@ const DescriptionPage = () => {
             <Box>
               <Heading>Bể bơi 3 tầng 1M5 </Heading>
               <Box mx={"1"} my={"2"} fontSize={["sm", "md", "lg", "xl"]}>
-                <Text fontSize={"sm"}>
+                <Text fontSize={DescriptionPage_size}>
                   Mã sản phẩm:
                   <span style={{ textDecoration: "line-through" }}>
                     {/* {currentProducts.original_price}.00 */}
@@ -124,14 +131,18 @@ const DescriptionPage = () => {
                     {/* {currentProducts.final_price}.50 */}
                   </span>
                 </Text>
-                <Text fontSize={"sm"} color={"#ff0000"} fontWeight={"bold"}>
+                <Text
+                  fontSize={DescriptionPage_size}
+                  color={colorPage}
+                  fontWeight={"bold"}
+                >
                   Giá :
                   <span style={{ textDecoration: "line-through" }}>
                     {/* {currentProducts.original_price}.00 */}
                   </span>
                   <span
                     style={{
-                      color: "red",
+                      color: "colorPage",
                       fontWeight: "bold",
                       marginLeft: "5px",
                       fontWeight: "bold",
@@ -151,7 +162,7 @@ const DescriptionPage = () => {
                     <Text
                       position={"absolute"}
                       height={"2px"}
-                      bgColor={"#ed1c24"}
+                      bgColor={colorPage}
                       width={"100%"}
                       top={"50%"}
                       left={"0"}
@@ -164,9 +175,9 @@ const DescriptionPage = () => {
                       background={"#fff"}
                       position={"relative"}
                       zIndex={10}
-                      fontSize={["14px", "14px", "15px", "18px"]}
+                      fontSize={DescriptionPage_fs}
                       padding={"0 10px"}
-                      color={"#263790"}
+                      color={colorName}
                     >
                       Thông tin - tính năng
                     </Text>
@@ -185,9 +196,9 @@ const DescriptionPage = () => {
                   </a>
                 </Box>
                 <Text
-                  fontSize={["15px", "15px", "15px", "18px"]}
+                  fontSize={DescriptionPage_fs}
                   fontWeight={"bold"}
-                  color={"blue"}
+                  color={colorTitle}
                 >
                   Đặt hàng qua app để được giao tận nơi
                 </Text>
@@ -203,9 +214,9 @@ const DescriptionPage = () => {
                   </a>
                 </Box>
                 <Text
-                  fontSize={["15px", "15px", "15px", "18px"]}
+                  fontSize={DescriptionPage_fs}
                   fontWeight={"bold"}
-                  color={"blue"}
+                  color={colorTitle}
                 >
                   Nhóm sỉ zalo cập nhật giá tốt mỗi ngày
                 </Text>

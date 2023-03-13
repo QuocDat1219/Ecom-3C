@@ -21,10 +21,6 @@ export const colorHr = "#eee";
 export const titleColor = "#333333";
 export const bderRCard = 5;
 
-/**
- * Color DescriptionPage*/
-export const colorPage = "#ff0000";
-
 /** Font size Card */
 export const fsCard = "14px";
 export const fsCardTitle = "16px";
@@ -128,3 +124,55 @@ export const settings = {
 
 // export const hImageCard = { [100, 100, 100, 100]}
 // export const wImageCard = { [100, 100, 100, 100]}
+
+
+
+/**Description */
+/**
+ * Color DescriptionPage*/
+export const colorPage = "#ff0000";
+export const colorName = "#263790";
+export const colorTitle = "blue";
+/**
+ * Reponsive fontsize*/
+export const DescriptionPage_fs = ["15px", "15px", "15px", "18px"];
+export const DescriptionPage_size = "14px";
+/** */
+/**
+ *Reponsive scrollbar */
+export const Relatedproducts_pt = ["10%", "5%", "0", "0"];
+export const Relatedproducts_pb = ["10%", "5%", "2%", "2%"];
+
+
+
+/**Carousel */
+/**Color */
+export const Carousel_color = "#ff0000";
+export const Carousel_bgcolor = "#f5f5f5";
+export const Carousel_colortitle = "blue";
+/**Reposive fontsize*/
+export const Carousel_Rpsize = ["10px", "12px", "14px", "15px"];
+export const Carousel_fontsize = "14px";
+/**Font */
+export const Carousel_font = "Arial, sans-serif";
+
+
+
+/**Payinfo */
+export const Payinfo_color = "#33997f";
+export const Payinfo_size = "16px";
+export const Payinfo_font = "Helvetica Neue, Helvetica, Arial, sans-serif";
+
+
+
+/**ShoppingGuide*/
+export const ShoppingGuide_colorR ="#ff0000";
+export const ShoppingGuide_colorB = "blue";
+export const ShoppingGuide_size = "16px";
+export const ShoppingGuide_font = "Helvetica Neue, Helvetica, Arial, sans-serif";
+
+/**
+ * WarrantyP
+ */
+export const WarrantyP_size = "16px";
+export const WarrantyP_font = "Helvetica Neue, Helvetica, Arial, sans-serif";

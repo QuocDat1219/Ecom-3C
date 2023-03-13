@@ -28,6 +28,15 @@ import {
   useMediaQuery,
   useToast,
 } from "@chakra-ui/react";
+import {
+  colorName,
+  colorTitle,
+  DescriptionPage_fs,
+  colorPage,
+  DescriptionPage_size,
+  Relatedproducts_pt,
+  Relatedproducts_pb,
+} from "../../style.golbal";
 const Relatedproducts = () => {
   const dispatch = useDispatch();
   // const mensD = useSelector((store) => store.pagesReducer.mensD);
@@ -59,13 +68,13 @@ const Relatedproducts = () => {
           justifyContent={"left"}
           alignItems={"center"}
           fontWeight={"bold"}
-          pt={["10%", "5%", "0", "0"]}
-          pb={["10%", "5%", "5%", "5%"]}
+          pt={Relatedproducts_pt}
+          pb={Relatedproducts_pb}
         >
           <Text
             position={"relative"}
             height={"2px"}
-            bgColor={"#ed1c24"}
+            bgColor={colorPage}
             width={"100%"}
             top={"50%"}
             fontWeight={"bold"}
@@ -75,8 +84,8 @@ const Relatedproducts = () => {
           <Text
             wordwrap={""}
             position={"absolute"}
-            textColor={"#263790"}
-            fontSize={["15px", "15px", "16px", "18px"]}
+            textColor={colorName}
+            fontSize={DescriptionPage_fs}
             backgroundColor={"#fff"}
             p={("0", "10px")}
             zIndex={9999}
