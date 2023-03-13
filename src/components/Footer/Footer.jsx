@@ -1,16 +1,12 @@
-import {
-  Box,
-  Flex,
-  Img,
-  Text,
-  useMediaQuery,
-} from "@chakra-ui/react";
+import { Box, Flex, Img, Text, useMediaQuery } from "@chakra-ui/react";
 import React from "react";
 import portfolio from "../../img/portfolio.png";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
 // import { GiCondorEmblem } from "react-icons/gi";
 import { Link } from "react-router-dom";
-import dathongbao from "../../image/dathongbao.png"
+import dathongbao from "../../image/dathongbao.png";
+import ggplay from "../../image/google-play.jpg";
+import appstore from "../../image/app-store.jpg";
 const Footer = () => {
   const [isLargerThan] = useMediaQuery("(min-width: 768px)");
   const [isSmallerThan] = useMediaQuery("(min-width: 468px)");
@@ -40,19 +36,24 @@ const Footer = () => {
             </Text>
             <Text mt={"10px"}>Đại Diện: Nguyễn Kiều Ngọc Hân</Text>
             <Text mt={"10px"}>Hotline: 093.3456.252</Text>
-            <Text mt={"10px"} >
+            <Text mt={"10px"}>
               MST: 0310731578 Nơi cấp: Chi cục thuế Q6, ngày cấp: 29/03/2011
             </Text>
+            <a href="http://online.gov.vn/Home/WebDetails/23122">
             <Img
               mt={"10px"}
               w={"85px"}
               h={"33px"}
               verticalAlign={"slide"}
               src={dathongbao}
-            ></Img>
+            ></Img></a>
           </Box>
 
-          <Box>
+          <Box
+            display={"flex"}
+            flexDirection={"column"}
+            justifyContent={"right"}
+          >
             <Text
               textAlign={isSmallerThan ? "right" : "center"}
               fontSize={isSmallerThan ? "16px" : "15px"}
@@ -60,7 +61,14 @@ const Footer = () => {
             >
               Copyright © 2015 by mytindigital. All Rights Reserved.
             </Text>
-
+            <br />
+            <a href="https://play.google.com/store/apps/details?id=com.mytindigital.mytindigital">
+              <Img src={ggplay} w={"180px"}></Img>
+            </a>
+            <br />
+            <a href="https://apps.apple.com/us/app/mytindigital/id1372586342?ls=1">
+              <Img src={appstore} w={"179px"}></Img>
+            </a>
           </Box>
         </Flex>
       </Box>
