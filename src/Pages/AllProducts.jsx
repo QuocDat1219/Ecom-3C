@@ -107,7 +107,7 @@ const AllProducts = () => {
           ></Text>
         </Box>
         <Carousel />
-        <Trending />
+        <Trending  />
       </Box>
       {loading ? (
         <Loading />

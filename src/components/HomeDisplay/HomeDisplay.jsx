@@ -22,7 +22,7 @@ export const HomeDis = ({ item }) => {
   // const { id, name, color, gender, images } = item;
   const { id, name, color, gender, imagesDefault, price } = item;
   // const images = imagesDefault.url;
-  const images = imagesDefault[0].url;
+  // const images = imagesDefault[0].url;
   // console.log(imagesDefault[0].url);
   // const [img, setImg] = useState(images[0]);
   const [fname, setFname] = useState("normal");
@@ -62,7 +62,7 @@ export const HomeDis = ({ item }) => {
             h={"auto"}
             objectFit={"cover"}
             className="imageAnimation"
-            src={images}
+            src={imagesDefault}
             alt={name}
           />
         </Box>

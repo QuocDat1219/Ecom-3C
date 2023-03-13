@@ -25,8 +25,9 @@ import {
 } from "../../style.golbal";
 const ProductDis = ({ item }) => {
   const navigate = useNavigate();
-  const { id, name, price, guarantee, imagesDefault } = item;
-  const images = imagesDefault[0].url;
+  const { id, name, price, guarantee, imagesDefault} = item;
+  // const images = imagesDetail[0].url;
+  // console.log(images);
   // const [img, setImg] = useState(images[0]);
   const handleDes = () => {
     navigate(`/description/${id}`);
@@ -71,7 +72,7 @@ const ProductDis = ({ item }) => {
             w={"auto"}
             h={"auto"}
             objectFit={"cover"}
-            src={images}
+            src={imagesDefault}
             alt={name}
           />
         </Box>

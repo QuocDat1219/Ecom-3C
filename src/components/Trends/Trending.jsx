@@ -55,7 +55,7 @@ const Trending = () => {
         </Heading>
         <Slider {...settings} ref={sliderRef}>
           {mensD?.length > 0 &&
-            mensD.map((item) => {
+            mensD?.map((item) => {
               return <HomeDis key={item.key} item={item} />;
             })}
         </Slider>
