@@ -62,7 +62,11 @@ export const HomeDis = ({ item }) => {
             h={"auto"}
             objectFit={"cover"}
             className="imageAnimation"
-            src={imagesDefault}
+            src={
+              imagesDefault
+                ? imagesDefault
+                : "https://climate.onep.go.th/wp-content/uploads/2020/01/default-image.jpg"
+            }
             alt={name}
           />
         </Box>
