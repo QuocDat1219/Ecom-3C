@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import FilterData from "../Filter/Filters/FilterData";
 import { getData } from "../redux/DataReducer/action";
+import { getListData } from "../redux/ListProductReducer/action";
+
 import Itop from "../components/iconTop/itop";
 import {
   Flex,
@@ -25,20 +27,21 @@ import { rspImageH } from "../style.golbal";
 //import FilterChecked from "../Filter/Filters/FilterChecked";
 const AllProducts = () => {
   const dispatch = useDispatch();
-  const listProduct = useSelector(
-    (store) => store?.ListProductReducer?.listProduct
-  );
+
   const products = useSelector((store) => store?.dataReducer?.products);
+  // const category = useSelector((store) => store?.
+
   const loading = useSelector((store) => store?.dataReducer?.isLoading);
   const [searchParams] = useSearchParams();
   // const [currentPage, setCurrentPage] = useState(1);
   const [openFilterData, setOpenFilterData] = useState(false);
   const location = useLocation();
   const [isLargerThan] = useMediaQuery("(min-width: 768px)");
+
   useEffect(() => {
+    dispatch(getListData());
     if (location.search || products?.length === 0) {
       const sortBy = searchParams.get("sortBy");
-
       const queryParams = {
         params: {
           category: searchParams.getAll("category"),
@@ -49,7 +52,6 @@ const AllProducts = () => {
           _order: sortBy,
         },
       };
-
       dispatch(getData(queryParams));
     }
   }, [dispatch, location.search, products?.length, searchParams]);
@@ -58,7 +60,7 @@ const AllProducts = () => {
   const handlerOpenFilter = () => {
     setOpenFilterData(!openFilterData);
   };
-
+  // console.log(products);
   // End handlerOpenFilter
   // const postPerPage = 9;
   // const totalPosts = products?.length;
@@ -71,6 +73,11 @@ const AllProducts = () => {
   //     console.log(product.id)
   //   })
   // }, [])
+
+  const listProduct = useSelector(
+    (store) => store?.ListProductReducer?.listProduct
+  );
+  console.log(listProduct);
 
   return (
     <Box>

@@ -20,8 +20,10 @@ import {
 export const HomeDis = ({ item }) => {
   const navigate = useNavigate();
   // const { id, name, color, gender, images } = item;
-  const { id, name, color, gender, images, price } = item;
-
+  const { id, name, color, gender, imagesDefault, price } = item;
+  // const images = imagesDefault.url;
+  const images = imagesDefault[0].url;
+  // console.log(imagesDefault[0].url);
   // const [img, setImg] = useState(images[0]);
   const [fname, setFname] = useState("normal");
 
