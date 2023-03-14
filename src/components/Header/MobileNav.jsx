@@ -1,20 +1,20 @@
 import { Flex, Text, Stack, Link, useColorModeValue } from "@chakra-ui/react";
-
 import MobileNavItem from "./MobileNavItem";
+import { Navbar_bg_color ,Navbar_text_default_color,Navbar_text_hover_color , Navbar_bg_hover_color} from "../../style.golbal";
 
 const MobileNav = (props) => {
  
 
   return (
     <Stack
-      bg={useColorModeValue("#1d3c84", "#1d3c84")}
+      bg={useColorModeValue(Navbar_bg_color, Navbar_bg_color)}
       display={{ md: "none" }}
     >
       <Stack>
         <Flex
           p={2}
           as={Link}
-          bg={"#ff0"}
+          bg={Navbar_bg_hover_color}
           href={"/allproducts"}
           justify={"space-between"}
           align={"center"}
@@ -22,7 +22,7 @@ const MobileNav = (props) => {
             textDecoration: "none",
           }}
         >
-          <Text bg={"#ff0"} fontWeight={300} color={"#1d3c84"}>
+          <Text bg={Navbar_bg_hover_color} fontWeight={300} color={Navbar_text_default_color}>
             TRANG CHỦ
           </Text>
         </Flex>

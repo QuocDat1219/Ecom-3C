@@ -11,30 +11,30 @@ import {
 import {
     ChevronDownIcon,
 } from '@chakra-ui/icons';
-
+import { Navbar_bg_color,Navbar_text_default_color,Navbar_text_hover_color } from "../../style.golbal";
 
 const MobileNavItem = ({ label, children, href }) => {
     const { isOpen, onToggle } = useDisclosure();
 
     return (
 
-        <Stack spacing={4} color={"white"}  onClick={children && onToggle}>
+        <Stack spacing={4} color={Navbar_text_default_color} onClick={children && onToggle}>
 
             <Flex
                 p={2}
                 as={Link}
-                bg={"#1d3c84"}
+                bg={Navbar_bg_color}
                 href={href ?? '#'}
                 justify={'space-between'}
                 align={'center'}
-                color={"white"}
+                color={Navbar_text_default_color}
                 _hover={{
                     textDecoration: 'none',
                 }}>
                 <Text
-                    bg={"#1d3c84"}
+                    bg={Navbar_bg_color}
                     fontWeight={300}
-                    color={useColorModeValue('white', 'white')}>
+                    color={useColorModeValue(Navbar_text_default_color, Navbar_text_default_color)}>
                     {label}
                 </Text>
                 {children && (
@@ -44,7 +44,7 @@ const MobileNavItem = ({ label, children, href }) => {
                         transform={isOpen ? 'rotate(180deg)' : ''}
                         w={6}
                         h={6}
-                        color={'white'}
+                        color={Navbar_text_default_color}
                     />
                 )}
             </Flex>
@@ -56,12 +56,26 @@ const MobileNavItem = ({ label, children, href }) => {
                     borderStyle={'solid'}
                     borderColor={useColorModeValue('gray.200', 'gray.700')}
                     textAlign={"left"}
-                    color={'white'}
+                    color={Navbar_text_default_color}
+                    css={{
+                        "&::-webkit-scrollbar": {
+                            width: "20px",
+                        },
+                        "&::-webkit-scrollbar-track": {
+                            width: "6px",
+                        },
+                        "&::-webkit-scrollbar-thumb": {
+                            background: Navbar_text_default_color,
+                            borderRadius: "13px",
+                        },
+                    }}
+                    overflowX="auto"
+                    maxHeight="300px"
                 >
 
                     {children &&
                         children.map((child) => (
-                            <Link key={child.label} color={"white"} py={2} href={child.href}>
+                            <Link key={child.label} color={Navbar_text_default_color} py={2} href={child.href}>
                                 {child.label}
                             </Link>
                         ))}
