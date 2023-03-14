@@ -17,14 +17,49 @@ import {
 }
   from "../../style.golbal";
 
-const Navbar = () => {
+import { useSelector, useDispatch } from "react-redux";
 
+
+const Navbar = () => {
+  
+  const lProducts = useSelector(
+    (store) => store?.ListProductReducer?.listProduct
+  );
+  console.log(lProducts);
+  // const lc = [];
+  // lc.push(lCategory);
   const [isOpens, setIsOpens] = useState(false);
   const [isMobile] = useMediaQuery("(max-width: 1058px)");
 
   useEffect(() => {
     setIsOpens(false);
+    
   }, [isMobile]);
+
+ 
+  const NAV_ITEMS = [
+    {
+      label: "DANH MỤC SẢN PHẨM",
+      children: lProducts,
+    },
+    {
+      label: "HƯỚNG DẪN MUA HÀNG",
+      href: "ShoppingGuide",
+    },
+    {
+      label: "QUY ĐỊNH BẢO HÀNH CHUNG",
+      href: "WarrantyPolicy",
+    },
+    {
+      label: "THÔNG TIN THANH TOÁN",
+      href: "Payinfo",
+    },
+    {
+      label: "VỀ CHÚNG TÔI",
+      href: "Aboutme",
+    },
+  ];
+  console.log(NAV_ITEMS);
 
   return (
     <>
@@ -71,96 +106,4 @@ const Navbar = () => {
 };
 export default Navbar;
 
-const NAV_ITEMS = [
-  {
-    label: "DANH MỤC SẢN PHẨM",
-    children: [
-      {
-        label:
-          "HÀNG MỚI VỀ - SẢN PHÂM THEO MÙA - CẬP NHẬT MỖI NGÀY- KÍCH XEM ĐẦY ĐỦ",
-        href: "#",
-      },
-      {
-        // label: "Freelance Projects",
-        label: "HÀNG THÁI HÀN NHẬT _ NHẬP KHẨU GIÁ ƯU ĐÃI -> BẤM XEM THÊM  ",
-        href: "#",
-      },
-      {
-        // label: "Freelance Projects",
-        label: "HÀNG THÁI HÀN NHẬT _ NHẬP KHẨU GIÁ ƯU ĐÃI -> BẤM XEM THÊM  ",
-        href: "#",
-      },
-      {
-        // label: "Freelance Projects",
-        label: "HÀNG THÁI HÀN NHẬT _ NHẬP KHẨU GIÁ ƯU ĐÃI -> BẤM XEM THÊM  ",
-        href: "#",
-      },
-      {
-        // label: "Freelance Projects",
-        label: "HÀNG THÁI HÀN NHẬT _ NHẬP KHẨU GIÁ ƯU ĐÃI -> BẤM XEM THÊM  ",
-        href: "#",
-      },
-      {
-        // label: "Freelance Projects",
-        label: "HÀNG THÁI HÀN NHẬT _ NHẬP KHẨU GIÁ ƯU ĐÃI -> BẤM XEM THÊM  ",
-        href: "#",
-      },
-      {
-        // label: "Freelance Projects",
-        label: "HÀNG THÁI HÀN NHẬT _ NHẬP KHẨU GIÁ ƯU ĐÃI -> BẤM XEM THÊM  ",
-        href: "#",
-      },
-      {
-        // label: "Freelance Projects",
-        label: "HÀNG THÁI HÀN NHẬT _ NHẬP KHẨU GIÁ ƯU ĐÃI -> BẤM XEM THÊM  ",
-        href: "#",
-      },
-      {
-        // label: "Freelance Projects",
-        label: "HÀNG THÁI HÀN NHẬT _ NHẬP KHẨU GIÁ ƯU ĐÃI -> BẤM XEM THÊM  ",
-        href: "#",
-      },
-      {
-        // label: "Freelance Projects",
-        label: "HÀNG THÁI HÀN NHẬT _ NHẬP KHẨU GIÁ ƯU ĐÃI -> BẤM XEM THÊM  ",
-        href: "#",
-      },
-      {
-        // label: "Freelance Projects",
-        label: "HÀNG THÁI HÀN NHẬT _ NHẬP KHẨU GIÁ ƯU ĐÃI -> BẤM XEM THÊM  ",
-        href: "#",
-      },
-      {
-        // label: "Freelance Projects",
-        label: "HÀNG THÁI HÀN NHẬT _ NHẬP KHẨU GIÁ ƯU ĐÃI -> BẤM XEM THÊM  ",
-        href: "#",
-      },
-      {
-        // label: "Freelance Projects",
-        label: "HÀNG THÁI HÀN NHẬT _ NHẬP KHẨU GIÁ ƯU ĐÃI -> BẤM XEM THÊM  ",
-        href: "#",
-      },
-      {
-        // label: "Freelance Projects",
-        label: "HÀNG THÁI HÀN NHẬT _ NHẬP KHẨU GIÁ ƯU ĐÃI -> BẤM XEM THÊM  ",
-        href: "#",
-      },
-    ],
-  },
-  {
-    label: "HƯỚNG DẪN MUA HÀNG",
-    href: "ShoppingGuide",
-  },
-  {
-    label: "QUY ĐỊNH BẢO HÀNH CHUNG",
-    href: "WarrantyPolicy",
-  },
-  {
-    label: "THÔNG TIN THANH TOÁN",
-    href: "Payinfo",
-  },
-  {
-    label: "VỀ CHÚNG TÔI",
-    href: "Aboutme",
-  },
-];
+

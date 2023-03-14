@@ -75,8 +75,8 @@ const MobileNavItem = ({ label, children, href }) => {
 
                     {children &&
                         children.map((child) => (
-                            <Link key={child.label} color={Navbar_text_default_color} py={2} href={child.href}>
-                                {child.label}
+                            <Link key={child.name} color={Navbar_text_default_color} py={2} href={"category/"+child._id}>
+                                {child.name}
                             </Link>
                         ))}
                 </Stack>

@@ -5,7 +5,7 @@ const getListData = (params) => (dispatch) => {
     return axios
         .get(`${process.env.REACT_APP_BASE_API}/category`, params)
         .then((res) => {
-            console.log(res.data.category);
+            // console.log(res.data.category);
             dispatch({ type: types.GET_LIST_S, payload: res.data.category });
         })
         .then((err) => {

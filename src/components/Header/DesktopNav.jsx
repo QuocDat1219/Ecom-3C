@@ -68,7 +68,7 @@ const DesktopNav = (props) => {
                   overflowX="auto"
                   maxHeight="400px">
                   {navItem.children.map((child) => (
-                    <DesktopSubNav key={child.label} {...child} />
+                    <DesktopSubNav key={child.name} {...child} />
                   ))}
                 </Stack>
               </PopoverContent>
