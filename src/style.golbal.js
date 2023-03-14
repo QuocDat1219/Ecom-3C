@@ -133,6 +133,8 @@ export const settings = {
 export const colorPage = "#ff0000";
 export const colorName = "#263790";
 export const colorTitle = "blue";
+
+
 /**
  * Reponsive fontsize*/
 export const DescriptionPage_fs = ["15px", "15px", "15px", "18px"];
@@ -176,3 +178,17 @@ export const ShoppingGuide_font = "Helvetica Neue, Helvetica, Arial, sans-serif"
  */
 export const WarrantyP_size = "16px";
 export const WarrantyP_font = "Helvetica Neue, Helvetica, Arial, sans-serif";
+
+/**
+ * Navbar 
+ */
+export const Navbar_bg_color = "#1d3c84";
+export const Navbar_text_default_color = "white";
+export const Navbar_text_hover_color = "#1d3c84";
+export const Navbar_bg_hover_color = "#ff0";
+
+/**
+ * Header
+ */
+
+export const Header_search_color = "#ee1c25"

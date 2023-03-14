@@ -3,11 +3,18 @@ import {
   Flex,
   Text,
   Stack,
-  Icon,
   Link,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { ChevronRightIcon } from "@chakra-ui/icons";
+
+import {
+  Navbar_bg_color,
+  Navbar_text_default_color,
+  Navbar_text_hover_color,
+  Navbar_bg_hover_color
+}
+  from "../../style.golbal";
+
 
 const DesktopSubNav = ({ label, href, subLabel }) => {
   return (
@@ -17,10 +24,9 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
       display={"block"}
       p={3}
       borderBottom={"1px solid white"}
-      // bgColor={"red"}
       _hover={{
-        bg: useColorModeValue("#ff0", "#ff0"),
-        color: "#1d3c84",
+        bg: useColorModeValue(Navbar_bg_hover_color,Navbar_bg_hover_color),
+        color: Navbar_text_hover_color,
       }}
     >
       <Stack direction={"row"} align={"center"}>
@@ -33,7 +39,7 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
           >
             {label}
           </Text>
-          <Text>{subLabel}</Text>
+        
         </Box>
         <Flex
           transition={"all .3s ease"}
@@ -44,7 +50,7 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
           align={"center"}
           flex={1}
         >
-          {/* <Icon color={'pink.400'} w={5} h={5} as={ChevronRightIcon} /> */}
+         
         </Flex>
       </Stack>
     </Link>
