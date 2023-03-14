@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import FilterData from "../Filter/Filters/FilterData";
-import { getaData, getData } from "../redux/DataReducer/action";
+import { getData, getaData } from "../redux/DataReducer/action";
 import { getListData } from "../redux/ListProductReducer/action";
 
 import Itop from "../components/iconTop/itop";
@@ -39,8 +39,9 @@ const AllProducts = () => {
   const [isLargerThan] = useMediaQuery("(min-width: 768px)");
 
   useEffect(() => {
+    dispatch(getaData(14));
     dispatch(getListData());
-    dispatch(getData(13));
+    // dispatch(getaData());
     if (location.search || products?.length === 0) {
       const sortBy = searchParams.get("sortBy");
       const queryParams = {
@@ -61,7 +62,6 @@ const AllProducts = () => {
   const handlerOpenFilter = () => {
     setOpenFilterData(!openFilterData);
   };
-
   // console.log(products);
   // End handlerOpenFilter
   // const postPerPage = 9;
@@ -109,7 +109,7 @@ const AllProducts = () => {
           ></Text>
         </Box>
         <Carousel />
-        <Trending  />
+        {/* <Trending /> */}
       </Box>
       {loading ? (
         <Loading />

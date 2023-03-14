@@ -20,7 +20,8 @@ const rootReducer = combineReducers({
   AuthReducer,
   pagesReducer,
   wishReducer,
-  ListProductReducer
+  ListProductReducer,
+
 });
 
 const store = legacy_createStore(
