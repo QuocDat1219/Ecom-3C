@@ -16,10 +16,10 @@ import {
   from "../../style.golbal";
 
 
-const DesktopSubNav = ({ label, href, subLabel }) => {
+const DesktopSubNav = ({ name, _id, subLabel }) => {
   return (
     <Link
-      href={href}
+      href={"category/"+_id}
       role={"group"}
       display={"block"}
       p={3}
@@ -37,7 +37,7 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
             fontWeight={500}
             display={"block"}
           >
-            {label}
+            {name}
           </Text>
         
         </Box>
