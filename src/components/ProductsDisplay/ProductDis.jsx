@@ -30,7 +30,7 @@ const ProductDis = ({ item }) => {
   // console.log(images);
   // const [img, setImg] = useState(images[0]);
   const handleDes = () => {
-    navigate(`/description/${id}`);
+    navigate(`/products/${id}`);
   };
 
   // const ChangeHoverImage = () => {

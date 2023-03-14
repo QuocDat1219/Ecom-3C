@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import FilterData from "../Filter/Filters/FilterData";
-import { getData } from "../redux/DataReducer/action";
+import { getaData, getData } from "../redux/DataReducer/action";
 import { getListData } from "../redux/ListProductReducer/action";
 
 import Itop from "../components/iconTop/itop";
@@ -40,6 +40,7 @@ const AllProducts = () => {
 
   useEffect(() => {
     dispatch(getListData());
+    dispatch(getData(13));
     if (location.search || products?.length === 0) {
       const sortBy = searchParams.get("sortBy");
       const queryParams = {
@@ -60,6 +61,7 @@ const AllProducts = () => {
   const handlerOpenFilter = () => {
     setOpenFilterData(!openFilterData);
   };
+
   // console.log(products);
   // End handlerOpenFilter
   // const postPerPage = 9;

@@ -16,6 +16,19 @@ const getData = (params) => (dispatch) => {
     });
 };
 
+// const getaData = (paramsid) => (dispatch) => {
+//   dispatch({ type: types.GET_A_DATA_R });
+//   return axios
+//     .get(`${process.env.REACT_APP_BASE_API}/products/${id}`)
+//     .then((res) => {
+//       console.log('products', res);
+//       dispatch({ type: types.GET_A_DATA_S, payload: res.data.products});
+//     })
+//     .catch((err) => {
+//       dispatch({ type: types.GET_A_DATA_F });
+//     });
+// };
+
 
 
 const updateData = (id, payload) => (dispatch) => {
