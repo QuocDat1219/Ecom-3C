@@ -25,12 +25,12 @@ import {
 } from "../../style.golbal";
 const ProductDis = ({ item }) => {
   const navigate = useNavigate();
-  const { id, name, price, guarantee, imagesDefault} = item;
+  const { _id, name, price, guarantee, imagesDefault} = item;
   // const images = imagesDetail[0].url;
   // console.log(images);
   // const [img, setImg] = useState(images[0]);
   const handleDes = () => {
-    navigate(`/products/${id}`);
+    navigate(`/products/${_id}`);
   };
 
   // const ChangeHoverImage = () => {
@@ -50,7 +50,7 @@ const ProductDis = ({ item }) => {
         justifyContent={"center"}
         alignItems={"center"}
         flexDirection={"column"}
-        key={id}
+        key={_id}
         width={"100%"}
         height={"280x"}
         // onMouseEnter={ChangeHoverImage}
@@ -83,7 +83,7 @@ const ProductDis = ({ item }) => {
             fontSize={fsCard}
             fontWeight={"bold"}
           >
-            {name ? name : "..."}
+            {name ? name : "Đang cập nhật"}
           </Text>
         </Box>
 
@@ -100,7 +100,7 @@ const ProductDis = ({ item }) => {
               Mã sản phẩm :
             </Text>
             <Text fontSize={fsCard} color={textColor} marginLeft={"5px"}>
-              {id ? id : " đang cập nhật"}
+              {_id ? _id : " đang cập nhật"}
             </Text>
           </Box>
           <Box display={"flex"} justifyContent={"center"} alignItems={"center"}>

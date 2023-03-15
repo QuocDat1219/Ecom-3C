@@ -34,7 +34,7 @@ const AllProducts = () => {
   // const products = useSelector((store) => store?.dataReducer?.products);
   // const category = useSelector((store) => store?.
 
-  const loading = useSelector((store) => store?.dataReducer?.isLoading);
+  const loading = useSelector((store) => store?.category?.isLoading);
   const [searchParams] = useSearchParams();
   // const [currentPage, setCurrentPage] = useState(1);
   const [openFilterData, setOpenFilterData] = useState(false);
@@ -62,26 +62,23 @@ const AllProducts = () => {
   //     dispatch(getData(queryParams));
   //   }
   // }, [dispatch, location.search, products?.length, searchParams]);
-
-  useEffect(() => {
-    dispatch(getCategory());
-    dispatch(getProducts());
-    dispatch(getListData());
-    dispatch(getAProducts(14))
-  }, [dispatch]);
-
   const products = useSelector((store) => store?.product?.products);
   const category = useSelector((store) => store?.category?.category);
+  useEffect(() => {
+    if(products?.length === 0){
+      dispatch(getCategory());
+      dispatch(getProducts());
+    }
+
+  }, [dispatch, category?.length]);
 
 
-  const FProduct = products.filter((item) => item.idCategory == 4)
 
 
-  console.log('FProduct', FProduct)
+
+
   
 
-  console.log("products", products);
-  console.log('category', category)
 
   // handlerOpenFilter
   const handlerOpenFilter = () => {
@@ -147,7 +144,7 @@ const AllProducts = () => {
         >
           {/* <  FilterData listProduct={listProduct} /> */}
           {/* <FilterChecked /> */}
-          <ListProducts products={products} />
+          <ListProducts products={products} category={category} />
         </Flex>
         /* {totalPosts > postPerPage && (
           <Paginate

@@ -2,22 +2,15 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import FilterData from "../../Filter/Filters/FilterData";
 import { getData } from "../../redux/DataReducer/action";
-import { Flex, Box, Spacer, Grid, Center, Text } from "@chakra-ui/react";
+import { Flex, Box, Spacer, Grid, Center, Text, Link } from "@chakra-ui/react";
 import ProductDis from "../ProductsDisplay/ProductDis";
 import { useMediaQuery } from "@chakra-ui/react";
 import Loading from "../Loading/Loading";
 import { useLocation, useSearchParams } from "react-router-dom";
 import Navbar from "../Header/Navbar";
-import { Truncate } from "@chakra-ui/react";
 import { bgColorPr, columnsCard, textColor } from "../../style.golbal";
-const ListProducts = ({ products }) => {
+const ListProducts = ({ products ,category }) => {
   const [isLargerThan] = useMediaQuery("(min-width: 768px)");
-  // const lProducts = useSelector(
-  //   (store) => store?.ListProductReducer?.listProduct
-  // );
-  // console.log(lProducts);
-  // const products = useSelector((store) => store?.product?.products);
-  const category = useSelector((store) => store?.category?.category);
   return (
     <>
       <Box width={isLargerThan ? "80%" : "100%"}>
@@ -81,20 +74,24 @@ const ListProducts = ({ products }) => {
                   }}
                 >
                   <Text
+                    mt={1}
+                    textAlign={"center"}
                     isTruncated
                     textOverflow={"ellipsis"}
                     whiteSpace={"nowrap"}
                     overflow={"hidden"}
                     maxW={"800px"}
+                    alignItems={"center"}
+                    textTransform={"uppercase"}
                   >
-                    {cate?.name}
+                    {cate?.name} - <Link href={`category/`+cate._id} color={"blue"} cursor={"pointer"} >Bấm đê xem thêm</Link>
                   </Text>
                 </Text>
               </Box>
               <Grid templateColumns={columnsCard} gap={8}>
                 {products
                   ?.filter((item) => item.idCategory == cate._id)
-                  // .slice(0, 20)  
+                  .slice(0, 10)  
                   ?.map((item) => {
                     return <ProductDis key={item.id} item={item} />;
                   })}
