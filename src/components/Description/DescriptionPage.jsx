@@ -31,27 +31,27 @@ import {
   colorPage,
   DescriptionPage_size,
 } from "../../style.golbal";
-// import { BsBagFill } from "react-icons/bs";
+import { getProducts } from "../../redux/Products/productSlice";
 const DescriptionPage = () => {
   const { id } = useParams();
   const toast = useToast();
-  const products = useSelector((store) => store.dataReducer.products);
+  const products = useSelector((store) => store?.product?.products);
   const dispatch = useDispatch();
   const [currentProducts, setCurrentProducts] = useState({});
   const [isLargerThan] = useMediaQuery("(min-width: 768px)");
   const [size, setSize] = useState(null);
   useEffect(() => {
     if (products.length === 0) {
-      dispatch(getData());
+      dispatch(getProducts());
     }
   }, [dispatch, products.length]);
   useEffect(() => {
     if (id) {
-      const cur = products.find((item) => item.id === Number(id));
+      const cur = products.find((item) => item._id === Number(id));
       cur && setCurrentProducts(cur);
+      console.log(currentProducts)
     }
   }, [id, products]);
-
   const handleCart = () => {
     let payload = {
       ...currentProducts,
@@ -67,7 +67,7 @@ const DescriptionPage = () => {
     dispatch(addToWishList(payload, toast));
   };
   return (
-    <div key={currentProducts.id}>
+    <div key={currentProducts._id}>
       <Navbar /> <br />
       <Box w="80%" m="auto">
         <Flex
@@ -114,12 +114,13 @@ const DescriptionPage = () => {
             // paddingRight={"80px"}
           >
             <Box>
-              <Heading>Bể bơi 3 tầng 1M5 </Heading>
+              <Heading>{currentProducts.name}</Heading>
               <Box mx={"1"} my={"2"} fontSize={["sm", "md", "lg", "xl"]}>
                 <Text fontSize={DescriptionPage_size}>
                   Mã sản phẩm:
-                  <span style={{ textDecoration: "line-through" }}>
+                  <span >
                     {/* {currentProducts.original_price}.00 */}
+                    {currentProducts._id}
                   </span>
                   <span
                     style={{
@@ -128,7 +129,7 @@ const DescriptionPage = () => {
                       marginLeft: "5px",
                     }}
                   >
-                    {/* {currentProducts.final_price}.50 */}
+                    {/* {currentProducts.price} */}
                   </span>
                 </Text>
                 <Text
@@ -137,8 +138,10 @@ const DescriptionPage = () => {
                   fontWeight={"bold"}
                 >
                   Giá :
-                  <span style={{ textDecoration: "line-through" }}>
+                  <span >
+                  {/* <span style={{ textDecoration: "line-through" }}> */}
                     {/* {currentProducts.original_price}.00 */}
+                    {currentProducts.price}
                   </span>
                   <span
                     style={{
@@ -268,15 +271,15 @@ const DescriptionPage = () => {
           </Box> */}
           </Box>
           <Box w={"50%"} maxW={"768px"} min-height={"100vh"} minW={"300px"}>
-            <CenterMode />
+            <CenterMode currentProducts= {currentProducts} />
           </Box>
         </Flex>
         <Box marginTop={"5%"}>
           <DesProduct />
         </Box>
-        <Box marginTop={"5%"}>
+        {/* <Box marginTop={"5%"}>
           <Relatedproducts />
-        </Box>
+        </Box> */}
       </Box>
     </div>
   );
