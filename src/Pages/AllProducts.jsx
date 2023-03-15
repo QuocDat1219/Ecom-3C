@@ -23,12 +23,15 @@ import ListProducts from "../components/ListProductsCart/ListProducts";
 import Trending from "../components/Trends/Trending";
 import Carousel from "../components/Carousel/Carousel";
 import { rspImageH } from "../style.golbal";
+import { store } from "../redux/store";
+import { getAProducts, getProducts } from "../redux/Products/productSlice";
+import { getCategory } from "../redux/Category/categorySlice";
 // import Paginate from "../components/Paginatation/Paginate";
 //import FilterChecked from "../Filter/Filters/FilterChecked";
 const AllProducts = () => {
   const dispatch = useDispatch();
 
-  const products = useSelector((store) => store?.dataReducer?.products);
+  // const products = useSelector((store) => store?.dataReducer?.products);
   // const category = useSelector((store) => store?.
 
   const loading = useSelector((store) => store?.dataReducer?.isLoading);
@@ -36,27 +39,49 @@ const AllProducts = () => {
   // const [currentPage, setCurrentPage] = useState(1);
   const [openFilterData, setOpenFilterData] = useState(false);
   const location = useLocation();
+
   const [isLargerThan] = useMediaQuery("(min-width: 768px)");
 
+  // useEffect(() => {
+  //   dispatch(getProducts());
+  //   // dispatch(getaData(14));
+  //   dispatch(getListData());
+  //   // dispatch(getaData());
+  //   if (location.search || products?.length === 0) {
+  //     const sortBy = searchParams.get("sortBy");
+  //     const queryParams = {
+  //       params: {
+  //         category: searchParams.getAll("category"),
+  //         gender: searchParams.getAll("gender"),
+  //         colortype: searchParams.getAll("colortype"),
+  //         sizes: searchParams.getAll("sizes"),
+  //         _sort: sortBy && "rating",
+  //         _order: sortBy,
+  //       },
+  //     };
+  //     dispatch(getData(queryParams));
+  //   }
+  // }, [dispatch, location.search, products?.length, searchParams]);
+
   useEffect(() => {
-    dispatch(getaData(14));
+    dispatch(getCategory());
+    dispatch(getProducts());
     dispatch(getListData());
-    // dispatch(getaData());
-    if (location.search || products?.length === 0) {
-      const sortBy = searchParams.get("sortBy");
-      const queryParams = {
-        params: {
-          category: searchParams.getAll("category"),
-          gender: searchParams.getAll("gender"),
-          colortype: searchParams.getAll("colortype"),
-          sizes: searchParams.getAll("sizes"),
-          _sort: sortBy && "rating",
-          _order: sortBy,
-        },
-      };
-      dispatch(getData(queryParams));
-    }
-  }, [dispatch, location.search, products?.length, searchParams]);
+    dispatch(getAProducts(14))
+  }, [dispatch]);
+
+  const products = useSelector((store) => store?.product?.products);
+  const category = useSelector((store) => store?.category?.category);
+
+
+  const FProduct = products.filter((item) => item.idCategory == 4)
+
+
+  console.log('FProduct', FProduct)
+  
+
+  console.log("products", products);
+  console.log('category', category)
 
   // handlerOpenFilter
   const handlerOpenFilter = () => {
@@ -75,12 +100,10 @@ const AllProducts = () => {
   //     console.log(product.id)
   //   })
   // }, [])
-
   const listProduct = useSelector(
     (store) => store?.ListProductReducer?.listProduct
   );
   console.log(listProduct);
-
   return (
     <Box>
       <Navbar /> <br />
@@ -109,13 +132,12 @@ const AllProducts = () => {
           ></Text>
         </Box>
         <Carousel />
-        {/* <Trending /> */}
+        <Trending />
       </Box>
       {loading ? (
         <Loading />
       ) : (
         // <>
-
         <Flex
           justifyContent={"center"}
           alignItems={"center"}

@@ -15,10 +15,20 @@ import {
   titleColor,
 } from "../../style.golbal";
 import { ChevronRightIcon } from "@chakra-ui/icons";
+import { getCategory } from "../../redux/Category/categorySlice";
+import { getProducts } from "../../redux/Products/productSlice";
 const Trending = () => {
   const dispatch = useDispatch();
+  useEffect(() => {
+  })
   // const mensD = useSelector((store) => store.pagesReducer.mensD);
-  const mensD = useSelector((store) => store?.dataReducer?.products);
+  // const mensD = useSelector((store) => store?.dataReducer?.products);
+
+  const category = useSelector((store) => store?.category?.category)
+  const products = useSelector((store) => store?.product?.products);
+
+
+  console.log("new" , products)
   // console.log(mensD);
   /**
    * Test data
@@ -34,10 +44,10 @@ const Trending = () => {
     sliderRef.current.slickPrev();
   };
   useEffect(() => {
-    if (mensD?.length === 0) {
-      dispatch(getMensData());
+    if (products?.length === 0) {
+      dispatch(getProducts());
     }
-  }, [dispatch, mensD?.length]);
+  }, [dispatch, products?.length]);
   return (
     <div>
       <Box position={"relative"}>
@@ -54,8 +64,8 @@ const Trending = () => {
           SẢN PHẨM MỚI{" "}
         </Heading>
         <Slider {...settings} ref={sliderRef}>
-          {mensD?.length > 0 &&
-            mensD?.map((item) => {
+          {products?.length > 0 &&
+            products?.map((item) => {
               return <HomeDis key={item.key} item={item} />;
             })}
         </Slider>

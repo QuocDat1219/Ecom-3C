@@ -17,25 +17,25 @@ const getData = (params) => (dispatch) => {
 };
 
 
-// const getaData = (id) => (dispatch) => {
-//   dispatch({ type: types.GET_A_DATA_R });
-//   return axios
-//     .get(`${process.env.REACT_APP_BASE_API}/products/${id}`)
-//     .then((res) => {
-//       console.log('products', res);
-//       dispatch({ type: types.GET_A_DATA_S, payload: res.data.products });
-//     })
-//     .catch((err) => {
-//       dispatch({ type: types.GET_A_DATA_F });
-//     });
-// };
-
-
-const getaData = async (id) => {
-  const response = await axios.get(`${process.env.REACT_APP_BASE_API}/products/${id}`);
-  console.log(response)
-  return response.data;
+const getaData = (id) => (dispatch) => {
+  dispatch({ type: types.GET_A_DATA_R });
+  return axios
+    .get(`${process.env.REACT_APP_BASE_API}/products/${id}`)
+    .then((res) => {
+      console.log('products', res);
+      dispatch({ type: types.GET_A_DATA_S, payload: res.data.products });
+    })
+    .catch((err) => {
+      dispatch({ type: types.GET_A_DATA_F });
+    });
 };
+
+
+// const getaData = async (id) => {
+//   const response = await axios.get(`${process.env.REACT_APP_BASE_API}/products/${id}`);
+//   console.log(response)
+//   return response.data;
+// };
 
 const updateData = (id, payload) => (dispatch) => {
   dispatch({ type: types.UPDATE_DATA_R });

@@ -12,14 +12,16 @@ import { Truncate } from "@chakra-ui/react";
 import { bgColorPr, columnsCard, textColor } from "../../style.golbal";
 const ListProducts = ({ products }) => {
   const [isLargerThan] = useMediaQuery("(min-width: 768px)");
-  const lProducts = useSelector(
-    (store) => store?.ListProductReducer?.listProduct
-  );
-  console.log(lProducts);
+  // const lProducts = useSelector(
+  //   (store) => store?.ListProductReducer?.listProduct
+  // );
+  // console.log(lProducts);
+  // const products = useSelector((store) => store?.product?.products);
+  const category = useSelector((store) => store?.category?.category);
   return (
     <>
       <Box width={isLargerThan ? "80%" : "100%"}>
-        {lProducts?.map((listProduct) => (
+        {category?.map((cate) => (
           <>
             <Box
               display={"flex"}
@@ -85,14 +87,14 @@ const ListProducts = ({ products }) => {
                     overflow={"hidden"}
                     maxW={"800px"}
                   >
-                    {listProduct?.name}
+                    {cate?.name}
                   </Text>
                 </Text>
               </Box>
               <Grid templateColumns={columnsCard} gap={8}>
                 {products
-                  ?.filter((item) => item.idProductList == listProduct.id)
-                  .slice(0, 10)
+                  ?.filter((item) => item.idCategory == cate._id)
+                  // .slice(0, 20)  
                   ?.map((item) => {
                     return <ProductDis key={item.id} item={item} />;
                   })}
