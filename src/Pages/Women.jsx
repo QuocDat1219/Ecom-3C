@@ -7,14 +7,23 @@ import Navbar from "../components/Header/Navbar";
 import ProductDis from "../components/ProductsDisplay/ProductDis";
 import FilterData from "../Filter/Filters/FilterData";
 import { getWomensData } from "../redux/PagesReducer/action";
+import { useNavigate } from "react-router-dom";
+import Trending from "../components/Trends/Trending";
 
-const AllwomensD = () => {
+const AllwomensD = ({ currentProducts }) => {
+  // const navigate = useNavigate();
+  // const { _id, name, price, guarantee, imagesDefault } = currentProducts;
+  // const handleDes = () => {
+  //   navigate(`/category/${_id}`);
+  // };
+
   const dispatch = useDispatch();
   const womensD = useSelector((store) => store.pagesReducer.womensD);
-  const loading = useSelector((store) => store.pagesReducer.isLoading);
+  const loading = useSelector((store) => store.category.isLoading);
   const [isLargerThan] = useMediaQuery("(min-width: 768px)");
   const [searchParams] = useSearchParams();
   const location = useLocation();
+
   useEffect(() => {
     if (location || womensD?.length === 0) {
       const sortBy = searchParams.get("sortBy");
@@ -39,22 +48,25 @@ const AllwomensD = () => {
         <Loading />
       ) : (
         <Flex flexDirection={isLargerThan ? "row" : "column"}>
-          <Box w={isLargerThan ? "15%" : "100%"}>
-            <FilterData />
-          </Box>
-          <Spacer />
-          <Box width={isLargerThan ? "80%" : "100%"}>
-            <Grid
-              templateColumns={
-                isLargerThan ? "repeat(3, 1fr)" : "repeat(2, 1fr)"
-              }
-              gap={"5px"}
-            >
-              {womensD?.length > 0 &&
-                womensD.map((item) => {
-                  return <ProductDis key={item.key} item={item} />;
-                })}
-            </Grid>
+          <Box w="80%" m="auto">
+            <Trending />
+            <Box w={isLargerThan ? "15%" : "100%"}>
+              <FilterData />
+            </Box>
+            <Spacer />
+            <Box width={isLargerThan ? "80%" : "100%"}>
+              <Grid
+                templateColumns={
+                  isLargerThan ? "repeat(3, 1fr)" : "repeat(2, 1fr)"
+                }
+                gap={"5px"}
+              >
+                {womensD?.length > 0 &&
+                  womensD.map((item) => {
+                    return <ProductDis key={item.key} item={item} />;
+                  })}
+              </Grid>
+            </Box>
           </Box>
         </Flex>
       )}

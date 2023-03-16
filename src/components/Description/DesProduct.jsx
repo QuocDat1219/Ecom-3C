@@ -30,7 +30,7 @@ import {
   colorPage,
   DescriptionPage_size,
 } from "../../style.golbal";
-const DesProduct = () => {
+const DesProduct = ({ currentProducts }) => {
   return (
     <div>
       <Box
@@ -71,11 +71,9 @@ const DesProduct = () => {
       >
         <List textAlign={"start"}>
           <ListItem>
-            HẠN SỬ DỤNG : Sử dụng dài hạn
-            <UnorderedList
-              textAlign={"start"}
-              lineHeight={[8, 8, 8, 10]}
-            >
+            {currentProducts?.description}
+            {/* HẠN SỬ DỤNG : Sử dụng dài hạn
+            <UnorderedList textAlign={"start"} lineHeight={[8, 8, 8, 10]}>
               <ListItem>
                 {" "}
                 Là loại thuốc diệt chuột đa liều, khi chuột ăn phải sẽ chết sau
@@ -94,9 +92,9 @@ const DesProduct = () => {
                 Thuốc có hương vị đặc trưng hấp dẫn loài chuột dễ dàng tiêu diệt
                 cả đàn chuột khỏi gia đình bạn.
               </ListItem>
-            </UnorderedList>
+            </UnorderedList> */}
           </ListItem>
-          <ListItem>
+          {/* <ListItem>
             HƯỚNG DẪN SỬ DỤNG :
             <UnorderedList textAlign={"start"} lineHeight={[8, 8, 8, 10]}>
               <ListItem>
@@ -115,7 +113,7 @@ const DesProduct = () => {
                 cùng chết.
               </ListItem>
             </UnorderedList>
-          </ListItem>
+          </ListItem> */}
         </List>
       </Flex>
     </div>
