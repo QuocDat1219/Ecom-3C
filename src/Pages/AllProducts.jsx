@@ -30,10 +30,8 @@ import { getCategory } from "../redux/Category/categorySlice";
 //import FilterChecked from "../Filter/Filters/FilterChecked";
 const AllProducts = () => {
   const dispatch = useDispatch();
-
   // const products = useSelector((store) => store?.dataReducer?.products);
   // const category = useSelector((store) => store?.
-
   const loading = useSelector((store) => store?.category?.isLoading);
   const [searchParams] = useSearchParams();
   // const [currentPage, setCurrentPage] = useState(1);
@@ -65,20 +63,15 @@ const AllProducts = () => {
   const products = useSelector((store) => store?.product?.products);
   const category = useSelector((store) => store?.category?.category);
   useEffect(() => {
-    if(products?.length === 0){
+    if (products?.length === 0) {
       dispatch(getCategory());
       dispatch(getProducts());
     }
-
-  }, [dispatch, category?.length]);
-
-
-
-
-
-
-  
-
+    if (category?.length === 0) {
+      dispatch(getCategory());
+      dispatch(getProducts());
+    }
+  }, [dispatch, category?.length, category?.length]);
 
   // handlerOpenFilter
   const handlerOpenFilter = () => {
@@ -97,10 +90,10 @@ const AllProducts = () => {
   //     console.log(product.id)
   //   })
   // }, [])
-  const listProduct = useSelector(
-    (store) => store?.ListProductReducer?.listProduct
-  );
-  console.log(listProduct);
+  // const listProduct = useSelector(
+  //   (store) => store?.ListProductReducer?.listProduct
+  // );
+  // console.log(listProduct);
   return (
     <Box>
       <Navbar /> <br />

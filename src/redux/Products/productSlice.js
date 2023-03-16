@@ -26,7 +26,6 @@ export const getAProducts = createAsyncThunk(
 export const resetState = createAction("Reset_all");
 const initialState = {
     products: [],
-
     isError: false,
     isLoading: false,
     isSuccess: false,

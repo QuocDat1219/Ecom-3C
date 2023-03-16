@@ -4,7 +4,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
-export default class CenterMode extends Component {
+const CenterMode = ({ currentProducts }) => {
+  const data = currentProducts.imagesDetail;
+  console.log("data", data);
   // render() {
   //   const settings = {
   //     customPaging: function (i) {
@@ -58,10 +60,16 @@ export default class CenterMode extends Component {
   //     </div>
   //   );
   // }
-  render() {
-    return (
-      <Carousel>
-        <div>
+  return (
+    <Carousel>
+      {data?.map((item) => {
+        return (
+          <div>
+            <img src={item?.url} />
+          </div>
+        );
+      })}
+      {/* <div>
           <img
             src="https://s3.amazonaws.com/static.neostack.com/img/react-slick/abstract02.jpg"
           />
@@ -71,8 +79,8 @@ export default class CenterMode extends Component {
         </div>
         <div>
           <img src="https://s3.amazonaws.com/static.neostack.com/img/react-slick/abstract04.jpg" />
-        </div>
-      </Carousel>
-    );
-  }
-}
+        </div> */}
+    </Carousel>
+  );
+};
+export default CenterMode;

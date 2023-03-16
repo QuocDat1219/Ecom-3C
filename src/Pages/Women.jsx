@@ -1,37 +1,37 @@
 import { Box, Flex, Grid, Spacer, useMediaQuery } from "@chakra-ui/react";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useSearchParams } from "react-router-dom";
 import Loading from "../components/Loading/Loading";
 import Navbar from "../components/Header/Navbar";
 import ProductDis from "../components/ProductsDisplay/ProductDis";
 import FilterData from "../Filter/Filters/FilterData";
-import { getWomensData } from "../redux/PagesReducer/action";
-
+import { useParams } from "react-router-dom";
+import { getAProducts, getProducts } from "../redux/Products/productSlice";
+import { getCategory } from "../redux/Category/categorySlice";
 const AllwomensD = () => {
   const dispatch = useDispatch();
-  const womensD = useSelector((store) => store.pagesReducer.womensD);
-  const loading = useSelector((store) => store.pagesReducer.isLoading);
+  const loading = useSelector((store) => store?.category?.isLoading);
+  const [currentProducts, setCurrentProducts] = useState({});
   const [isLargerThan] = useMediaQuery("(min-width: 768px)");
   const [searchParams] = useSearchParams();
   const location = useLocation();
-  useEffect(() => {
-    if (location || womensD?.length === 0) {
-      const sortBy = searchParams.get("sortBy");
 
-      const queryParams = {
-        params: {
-          category: searchParams.getAll("category"),
-          gender: searchParams.getAll("gender"),
-          colortype: searchParams.getAll("colortype"),
-          sizes: searchParams.getAll("sizes"),
-          _sort: sortBy && "rating",
-          _order: sortBy,
-        },
-      };
-      dispatch(getWomensData(queryParams));
+  const { id } = useParams();
+  const products = useSelector((store) => store?.product?.products);
+  const category = useSelector((store) => store?.category?.category);
+
+  useEffect(() => {
+    if (products.length === 0) {
+      dispatch(getCategory());
+      dispatch(getProducts());
     }
-  }, [dispatch, location.search, womensD?.length, searchParams]);
+    if (id) {
+      const cur = products.filter((item) => item.idCategory === Number(id));
+      cur && setCurrentProducts(cur);
+    }
+  }, [id, products.length]);
+  console.log("currentProducts", currentProducts);
   return (
     <div className="AllwomensD">
       <Navbar /> <br />
@@ -39,9 +39,7 @@ const AllwomensD = () => {
         <Loading />
       ) : (
         <Flex flexDirection={isLargerThan ? "row" : "column"}>
-          <Box w={isLargerThan ? "15%" : "100%"}>
-            <FilterData />
-          </Box>
+          <Box w={isLargerThan ? "15%" : "100%"}>{/* <FilterData /> */}</Box>
           <Spacer />
           <Box width={isLargerThan ? "80%" : "100%"}>
             <Grid
@@ -50,8 +48,8 @@ const AllwomensD = () => {
               }
               gap={"5px"}
             >
-              {womensD?.length > 0 &&
-                womensD.map((item) => {
+              {currentProducts?.length > 0 &&
+                currentProducts.map((item) => {
                   return <ProductDis key={item.key} item={item} />;
                 })}
             </Grid>

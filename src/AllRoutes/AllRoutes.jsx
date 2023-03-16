@@ -26,12 +26,13 @@ const AllRoutes = () => {
         <Route path="/" element={<AllProducts />} />
         <Route path="/allproducts" element={<AllProducts />} />
         <Route path="/Aboutme" element={<AboutMe />} />
-        <Route path="/Payinfo" element={<Payinfo/>}/>
-        <Route path="/WarrantyPolicy" element={<WarrantyPolicy/>}/>
-        <Route path="/ShoppingGuide" element={<ShoppingGuide/>}/>
+        <Route path="/Payinfo" element={<Payinfo />} />
+        <Route path="/WarrantyPolicy" element={<WarrantyPolicy />} />
+        <Route path="/ShoppingGuide" element={<ShoppingGuide />} />
         <Route path="/women" element={<Women />} />
         <Route path="/shoes" element={<AllshoesD />} />
         <Route path="/products/:id" element={<DescriptionPage />} />
+        <Route path="/category/:id" element={<Women />} />
         <Route path="/cart" element={<Cart />} />
         <Route
           path="/wishlist"

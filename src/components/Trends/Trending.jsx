@@ -19,16 +19,18 @@ import { getCategory } from "../../redux/Category/categorySlice";
 import { getProducts } from "../../redux/Products/productSlice";
 const Trending = () => {
   const dispatch = useDispatch();
-  useEffect(() => {
-  })
+  useEffect(() => {});
   // const mensD = useSelector((store) => store.pagesReducer.mensD);
   // const mensD = useSelector((store) => store?.dataReducer?.products);
 
-  const category = useSelector((store) => store?.category?.category)
+  const category = useSelector((store) => store?.category?.category);
   const products = useSelector((store) => store?.product?.products);
-
-
-  console.log("new" , products)
+  const sortByDate = (items) => {
+    return items.slice().sort((a, b) => {
+      return a.createdAt - b.createdAt;
+    });
+  };
+  console.log("sortByDate", sortByDate);
   // console.log(mensD);
   /**
    * Test data
