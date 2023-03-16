@@ -37,8 +37,10 @@ import {
   Relatedproducts_pt,
   Relatedproducts_pb,
 } from "../../style.golbal";
-const Relatedproducts = () => {
+const Relatedproducts = ({ currentProducts }) => {
   const dispatch = useDispatch();
+ 
+
   // const mensD = useSelector((store) => store.pagesReducer.mensD);
   const mensD = useSelector((store) => store?.dataReducer?.products);
   console.log(mensD);

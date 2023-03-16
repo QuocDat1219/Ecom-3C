@@ -49,7 +49,7 @@ const DescriptionPage = () => {
     if (id) {
       const cur = products.find((item) => item._id === Number(id));
       cur && setCurrentProducts(cur);
-      console.log(currentProducts)
+      console.log(currentProducts);
     }
   }, [id, products]);
   const handleCart = () => {
@@ -118,7 +118,7 @@ const DescriptionPage = () => {
               <Box mx={"1"} my={"2"} fontSize={["sm", "md", "lg", "xl"]}>
                 <Text fontSize={DescriptionPage_size}>
                   Mã sản phẩm:
-                  <span >
+                  <span>
                     {/* {currentProducts.original_price}.00 */}
                     {currentProducts._id}
                   </span>
@@ -138,8 +138,8 @@ const DescriptionPage = () => {
                   fontWeight={"bold"}
                 >
                   Giá :
-                  <span >
-                  {/* <span style={{ textDecoration: "line-through" }}> */}
+                  <span>
+                    {/* <span style={{ textDecoration: "line-through" }}> */}
                     {/* {currentProducts.original_price}.00 */}
                     {currentProducts.price}
                   </span>
@@ -271,14 +271,14 @@ const DescriptionPage = () => {
           </Box> */}
           </Box>
           <Box w={"50%"} maxW={"768px"} min-height={"100vh"} minW={"300px"}>
-            <CenterMode currentProducts= {currentProducts} />
+            <CenterMode currentProducts={currentProducts} />
           </Box>
         </Flex>
         <Box marginTop={"5%"}>
-          <DesProduct />
+          <DesProduct currentProducts={currentProducts} />
         </Box>
         {/* <Box marginTop={"5%"}>
-          <Relatedproducts />
+          <Relatedproducts currentProducts={currentProducts} />
         </Box> */}
       </Box>
     </div>
