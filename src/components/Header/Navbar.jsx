@@ -8,6 +8,8 @@ import {
 import DesktopNav from "./DesktopNav";
 import { useEffect, useState } from "react";
 import Header from "./Headers";
+import { getCategory } from "../../redux/Category/categorySlice";
+import { useSelector, useDispatch } from "react-redux";
 
 import {
   Navbar_bg_color,
@@ -17,30 +19,31 @@ import {
 }
   from "../../style.golbal";
 
-import { useSelector, useDispatch } from "react-redux";
 
 
 const Navbar = () => {
-  
-  const lProducts = useSelector(
-    (store) => store?.ListProductReducer?.listProduct
-  );
-  console.log(lProducts);
-  // const lc = [];
-  // lc.push(lCategory);
+  const dispatch = useDispatch();
+  const category = useSelector((store) => store?.category?.category);
+  useEffect(() => {
+    if (category?.length === 0) {
+      dispatch(getCategory());
+    }
+  }, [dispatch, category?.length]);
+  console.log(category);
+
   const [isOpens, setIsOpens] = useState(false);
   const [isMobile] = useMediaQuery("(max-width: 1058px)");
 
   useEffect(() => {
     setIsOpens(false);
-    
+
   }, [isMobile]);
 
- 
+
   const NAV_ITEMS = [
     {
       label: "DANH MỤC SẢN PHẨM",
-      children: lProducts,
+      children: category,
     },
     {
       label: "HƯỚNG DẪN MUA HÀNG",

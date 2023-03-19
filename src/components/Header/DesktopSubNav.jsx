@@ -19,7 +19,7 @@ import {
 const DesktopSubNav = ({ name, _id, subLabel }) => {
   return (
     <Link
-      href={"category/"+_id}
+      href={"/category/"+_id}
       role={"group"}
       display={"block"}
       p={3}
